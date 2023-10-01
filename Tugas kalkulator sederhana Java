@@ -1,0 +1,14 @@
+public class (nama public class) {
+
+public static void main(int[] args) {
+
+//menghitung variabel
+int All;
+int a = 2 , b = 3 , c = 6 , d = 5 ;
+All = b * d - c / a + b ;
+
+//mencetak hasil
+System.out.println("All:" + All);
+
+}    
+}
