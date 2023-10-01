@@ -6,14 +6,14 @@
 
 /**
  *
- * @author Asus
+ * @author (Author name)
  */
-public class Tugaskalkulator extends javax.swing.JFrame {
+public class (Public Class name) extends javax.swing.JFrame {
 
     /**
      * Creates new form Tugaskalkulator
      */
-    public Tugaskalkulator() {
+    public (Public name)() {
         initComponents();
     }
 
