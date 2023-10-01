@@ -1,0 +1,39 @@
+package (Package name);
+import java.util.Scanner ; //membuat data input
+public class (Public Class name) {
+
+public static void main(String[] args){
+//membuat input
+String Nama;
+int Jumlahbeli;
+double Harga = 0,Totalbayar = 0,Diskon = 0, Bonus;
+Scanner scan = new Scanner(System.in) ;
+System.out.println("Toko Buah Jambu Bangkok");
+System.out.println("============================");
+System.out.println("Selamat datang di Toko Buah Jambu Bangkok");
+System.out.println("Nama pembeli:");
+Nama = scan.nextLine();
+System.out.println("Minuman : Jambu Bangkok");
+System.out.println("Harga\t: Rp");
+Harga = scan.nextDouble();
+System.out.println("Jumlah beli: ");
+Jumlahbeli = scan.nextInt();
+
+    //memproses input
+    Totalbayar = Harga*Jumlahbeli;
+    if ( Jumlahbeli < 2 ){System.out.println("Bonus: 1 minuman Jambu Bangkok");}
+    else if (Jumlahbeli >= 2 && Jumlahbeli <= 3){System.out.println("Bonus: 1 minuman Jambu Bangkok dan 1 es krim");}
+    else if (Jumlahbeli >= 4){System.out.println("Bonus: 1 minuman Jambu Bangkok dan 1 teh Boba");}
+    else {System.out.println("Bonus: -");}
+    if ( Jumlahbeli < 4 ){Diskon= 0.01*Totalbayar;}
+    else if ( Jumlahbeli >= 4 && Jumlahbeli <= 5){Diskon= 0.02*Totalbayar;}
+    else if ( Jumlahbeli >= 6){Diskon= 0.03*Totalbayar;}
+    else {Diskon = 0*Totalbayar;}
+    
+    //mencetak output
+    Totalbayar= Totalbayar - Diskon;
+    System.out.println("========================");
+    System.out.println("Diskon          : RP "+ Diskon);
+    System.out.println("Total Bayar     : RP "+ Totalbayar);
+}
+}

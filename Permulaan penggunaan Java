@@ -1,0 +1,17 @@
+package (Package name);
+
+import java.util.Scanner;
+
+public class (Public Class name) 
+{
+public static void main(String[] args) 
+    {
+    String DC = "Halo semua," ;
+    String GH = " saya Darrel." ;
+    String FC = " Hari ini saya mau" ;
+    String HJ = " mengerjakan tugas IFT," ;
+    String DG = " selamat menyaksikan!" ;
+    String ABC = DC + GH + FC + HJ + DG ;
+    System.out.println(ABC);
+    }
+}

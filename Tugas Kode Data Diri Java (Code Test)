@@ -1,0 +1,12 @@
+public class (Public Class name) {
+
+public static void main (String[] args) {
+    
+java.awt.EventQueue.invokeLater(new Runnable() {
+             public void run() {
+                new Interactivebutton().setVisible(true);
+            }
+});
+    
+}
+}

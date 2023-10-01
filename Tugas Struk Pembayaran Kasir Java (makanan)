@@ -1,0 +1,37 @@
+package (Package name);
+import java.util.Scanner ;//membuat data input
+public class (Public Class name) {
+
+    public static void main(String[] args) {
+    //membuat input
+    String Nama,Jenismakanan ;
+    int Jumlahbeli ;
+    double Harga = 0,Totalbayar = 0,Diskon = 0,Bonus;
+    Scanner scan = new Scanner(System.in) ;
+    System.out.println("Resto (nama resto)");
+    System.out.println("===================");
+    System.out.println("Selamat datang di Resto (nama resto)");
+    System.out.println("Nama pembeli: ");
+    Nama = scan.nextLine();
+    System.out.println("Jenis makanan: ");
+    Jenismakanan = scan.nextLine();
+    System.out.println("harga:Rp");
+    Harga =scan.nextDouble();
+    System.out.println("Jumlah beli: ");
+    Jumlahbeli = scan.nextInt();
+    
+    //memproses input
+    Totalbayar = Harga*Jumlahbeli;
+    if (Jumlahbeli > 6){System.out.println("Bonus: Gratis 1 gantungan kunci");}
+    if (Totalbayar > 50000){Diskon=0.1*Totalbayar;}
+    else if (Totalbayar > 80000) {Diskon=0.2*Totalbayar;}
+    else if (Totalbayar > 1000000) {Diskon=0.3*Totalbayar;}
+    Totalbayar= Totalbayar - Diskon;
+    
+    //mencetak output
+    System.out.println("========================");
+    System.out.println("Diskon          : RP "+ Diskon);
+    System.out.println("Total Bayar     : RP "+ Totalbayar);
+}
+    
+}

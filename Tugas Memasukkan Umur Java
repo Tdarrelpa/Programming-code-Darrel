@@ -1,0 +1,48 @@
+package (Package name);
+import java.util.Scanner; //membuat data input
+public class (Public Class name) {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+//variabel
+int umur;
+String kelompok = null;
+ Scanner scan = new Scanner(System.in);//input keyboard
+
+ 
+
+// mengambil input
+System.out.print("Inputkan umur anda: ");
+umur = scan.nextInt();//memasukan input kedalam variabel
+
+
+
+
+// proses pengelompokan umur manusia
+if (umur <= 0){kelompok = "tidak valid";
+        System.out.println("Masukkan umur yang valid");}
+
+ else if ( umur > 0 && umur < 5 ) {kelompok = "BALITA";}
+         
+ else if ( umur >= 5 && umur < 12 ) {kelompok = "Anak anak";} 
+
+ else if ( umur >= 12 && umur < 20 ){kelompok = "Remaja";} 
+
+ else if ( umur >= 20 && umur < 40 ){kelompok = "Dewasa";} 
+
+ else if ( umur >= 40 && umur < 60 ){kelompok = "Paruh Baya";}
+
+ else if ( umur >= 60 && umur <= 120) {kelompok = "Lanjut Usia";}
+
+ else if (umur > 120) {kelompok = "Setengah ras iblis";}
+
+
+//output hasil
+System.out.println("Umur anda "+ umur + ", termasuk dalam kategori "+ kelompok);
+
+
+} 
+} 
