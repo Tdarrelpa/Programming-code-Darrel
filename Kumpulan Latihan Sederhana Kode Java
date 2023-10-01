@@ -1,4 +1,4 @@
-public class LatihantugasJava {
+public class (Public Class name) {
   public static void main(String[] args) {
     String firstName = "John ";
     String lastName = "Doe";
@@ -8,7 +8,7 @@ public class LatihantugasJava {
 }
 
 
-public class LatihantugasJava {
+public class (Public Class name) {
   public static void main(String[] args) {
     int myNum = 5;               // integer (whole number)
     float myFloatNum = 5.99f;    // floating point number
@@ -24,7 +24,7 @@ public class LatihantugasJava {
 }
 
 
-public class LatihantugasJava {
+public class (Public Class name) {
  public static void main(String[] args) {
     int sum1 = 100 + 50;
     int sum2 = sum1 + 250;
@@ -36,7 +36,7 @@ public class LatihantugasJava {
 }
 
 
-public class LatihantugasJava {
+public class (Public Class name) {
 public static void main(String[] args) {
 String txt = "Hello World";
 System.out.println(txt.toUpperCase());
@@ -45,7 +45,7 @@ System.out.println(txt.toLowerCase());
 }
 
 
-public class LatihantugasJava {
+public class (Public Class name) {
 public static void main(String[] args) {
 int x = 10;
 int y = 9;
@@ -54,7 +54,7 @@ System.out.println(x > y); // returns true, because 10 is higher than 9
 }
 
 
-public class LatihantugasJava {
+public class (Public Class name) {
 public static void main(String[] args) {
 if (20 > 18) {
 System.out.println("20 is greater than 18"); // obviously
@@ -63,7 +63,7 @@ System.out.println("20 is greater than 18"); // obviously
 }
 
 
-public class LatihantugasJava {
+public class (Public Class name) {
 public static void main(String[] args) {
 int time = 20;
 if (time < 18) {
@@ -75,7 +75,7 @@ System.out.println("Good evening.");
 }
 
 
-public class LatihantugasJava {
+public class (Pubic Class name) {
 public static void main(String[] args) {
 int i = 0;
 while (i < 5) {
@@ -86,7 +86,7 @@ i++;
 }
 
 
-public class LatihantugasJava {
+public class (Public Class name) {
 public static void main(String[] args) {
 for (int i = 0; i < 10; i++) {
 if (i == 4) {
@@ -99,7 +99,7 @@ System.out.println(i);
 
 
 
-public class LatihantugasJava {
+public class (Public Class name) {
 public static void main(String[] args) {
 
 for (int i = 0; i < 8; i++) {
