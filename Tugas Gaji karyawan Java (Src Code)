@@ -6,14 +6,14 @@
 
 /**
  *
- * @author Asus
+ * @author (Author name)
  */
-public class Tugasgajikaryawan extends javax.swing.JFrame {
+public class (Public Class name) extends javax.swing.JFrame {
 
     /**
      * Creates new form Gajikaryawan
      */
-    public Tugasgajikaryawan() {
+    public (Public name)() {
         initComponents();
     }
 
