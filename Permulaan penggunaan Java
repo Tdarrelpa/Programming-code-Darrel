@@ -1,8 +1,8 @@
-package Tugassegitiga;
+package (Package name);
 
 import java.util.Scanner;
 
-public class Segitiga 
+public class (Public Class name) 
 {
 public static void main(String[] args) 
     {
