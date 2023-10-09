@@ -4,8 +4,6 @@ import "fmt"
 
 func main () { 
 	var x float32
-	
-	x = 
 
 	fmt.Print("Tolong masukan angka untuk nilai x apa pun :")
 	fmt.Scan(&x)
