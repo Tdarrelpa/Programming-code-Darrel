@@ -7,9 +7,6 @@ func main () {
 	var x int
 	var y int
 
-	x =
-            y = 
-
 	fmt.Print("Tolong masukan nilai x dan y :")
 	fmt.Scan(&x, &y)
 
