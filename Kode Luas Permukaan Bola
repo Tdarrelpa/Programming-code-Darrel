@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 func main() {
-    
-    var jari2, LPbola float64
+var jari2, LPbola float64
+const p = 3.14
 
     fmt.Print("Masukkan jari-jari lingkaran= ")
     fmt.Scanln(&jari2)
 
-    LPbola = 4 * 3.14 * jari2 * jari2
+    LPbola = 4 * p * jari2 * jari2
 
-    fmt.Println("Luas permukaan bola adalah  = ", LPbola)
+    fmt.Println("Luas permukaan bola adalah  = ", LPbola) 
 }
