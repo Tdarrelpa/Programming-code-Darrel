@@ -1,0 +1,20 @@
+package main
+
+import "fmt"
+
+func main() {
+ var x uint
+ 
+ fmt.Print("Masukkan bilangan positif 2 digit apa saja = ")
+ fmt.Scan(&x)
+ 
+ if x < 10 {
+     return
+ } else {
+     
+     d1 := (x % 10)
+     d2 := (x / 10)
+     
+     fmt.Printf("Hasil %d%d%d%d", d2, d2, d1, d1)
+ }
+}
