@@ -1,0 +1,16 @@
+package main
+
+import "fmt"
+
+func main() {
+    var n, m, i int
+    fmt.Println("Masukkan angka awal: ")
+    fmt.Scan(&n)
+    fmt.Println("Masukkan angka akhir: ")
+    fmt.Scan(&m)
+    for i = n; i<= m{
+    fmt.Printf(i, i+i)\
+
+    i++
+    }
+}
