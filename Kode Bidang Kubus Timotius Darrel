@@ -1,0 +1,21 @@
+package main
+
+import "fmt"
+
+func main() {
+    var a, b, luas permukaan, keliling, volume int
+    
+    fmt.Print("Masukkan jumlah persegi: ")
+    fmt.Scan(&a)
+    
+    for i := 0; i < a; i++ {
+        fmt.Print("Masukkan sisi persegi panjang: ")
+        fmt.Scan(&b)
+        
+        luas permukaan = 6 * b * b
+        keliling = 12 * b
+        volume = b * b * b
+        
+        fmt.Println("Luas: %d\nKeliling: %d\nVolume: %d\n", luas, keliling, volume)
+    }
+}
