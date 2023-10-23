@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func main() {
+    var a int
+    var b string
+    
+    fmt.Print("Masukkan bilangan bulat: ")
+    fmt.Scan(&a)
+    
+    fmt.Print("Masukkan kata: ")
+    fmt.Scan(&b)
+    
+    for i := 0; i < a; i = i++ {
+        
+        fmt.Println(b)
+    }
+}
