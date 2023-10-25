@@ -255,7 +255,7 @@ public class (Public Class name) extends javax.swing.JFrame {
     txtgajipokok.setText("1800000");    
     }
     else if (btnplhnjabatan.getSelectedItem().equals("Satpam (Security)")){
-    txtgajipokok.setText("1700000");    
+    txtgajipokok.setText("1600000");    
     }
     }                                              
 
@@ -342,7 +342,7 @@ public class (Public Class name) extends javax.swing.JFrame {
     txtjlmhuanglembur.setText("500000");    
     }
     else if (btnplhnbonusjamlembur.getSelectedItem().equals("+12 jam")){
-    txtjlmhuanglembur.setText("100000");    
+    txtjlmhuanglembur.setText("1000000");    
     }
     }                                                     
 
