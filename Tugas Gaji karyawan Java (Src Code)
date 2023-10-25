@@ -281,6 +281,24 @@ public class (Public Class name) extends javax.swing.JFrame {
     else if (btnplhnjamkerja.getSelectedItem().equals("6 jam")){
     txttmbhnuphkerjaprbulan.setText("300000");
     }
+    else if (btnplhnjamkerja.getSelectedItem().equals("7 jam")){
+    txttmbhnuphkerjaprbulan.setText("350000");
+    }
+    else if (btnplhnjamkerja.getSelectedItem().equals("8 jam")){
+    txttmbhnuphkerjaprbulan.setText("400000");
+    }
+    else if (btnplhnjamkerja.getSelectedItem().equals("9 jam")){
+    txttmbhnuphkerjaprbulan.setText("450000");
+    }
+    else if (btnplhnjamkerja.getSelectedItem().equals("10 jam")){
+    txttmbhnuphkerjaprbulan.setText("500000");
+    }
+    else if (btnplhnjamkerja.getSelectedItem().equals("11 jam")){
+    txttmbhnuphkerjaprbulan.setText("550000");
+    }
+    else if (btnplhnjamkerja.getSelectedItem().equals("12 jam")){
+    txttmbhnuphkerjaprbulan.setText("600000");
+    }
     }                                               
 
     private void btnplhnbonusjamlemburActionPerformed(java.awt.event.ActionEvent evt) {                                                      
@@ -315,9 +333,15 @@ public class (Public Class name) extends javax.swing.JFrame {
     txtjlmhuanglembur.setText("30000");    
     }
     else if (btnplhnbonusjamlembur.getSelectedItem().equals("+9 jam")){
-    txtjlmhuanglembur.setText("50000");    
+    txtjlmhuanglembur.setText("35000");    
     }
     else if (btnplhnbonusjamlembur.getSelectedItem().equals("+10 jam")){
+    txtjlmhuanglembur.setText("400000");    
+    }
+    else if (btnplhnbonusjamlembur.getSelectedItem().equals("+11 jam")){
+    txtjlmhuanglembur.setText("500000");    
+    }
+    else if (btnplhnbonusjamlembur.getSelectedItem().equals("+12 jam")){
     txtjlmhuanglembur.setText("100000");    
     }
     }                                                     
