@@ -3,22 +3,20 @@ package main
 import "fmt"
 
 func main() {
-    var x int
+    var x, total int
     
-	fmt.Print("Masukkan bilangan bulat positif: ")
-	fmt.Scan(&x)
-	
-		d1 := x % 10
-		d2 := ( x / 10 ) - ( ( x / 100 ) * 10 )
-		d3 := ( x / 100 ) - ( ( x / 1000 ) * 1000 % 1000)
-		d4 := x % 10000 - x % 1000
-		d5 := x / 10000
-		
-
-		fmt.Printf( "Digit pertama: %d\n",  d1 )
-		fmt.Printf( "Digit kedua: %d\n",  d2 )
-		fmt.Printf( "Digit ketiga: %d\n",  d3 )
-		fmt.Printf( "Digit keempat: %d\n",  d4 )
-		fmt.Printf( "Digit kelima: %d\n",  d5 )
-		fmt.Printf("Jumlah digitnya adalah: %d\n", d1 + d2 + d3 + d4 + d5)
+    fmt.Print("Masukkan bilangan bulat positif: ")
+    fmt.Scan(&x)
+    
+    if x < 0 {
+        return
+    } 
+    
+    for x > 0 {
+        digit := x % 10
+        total += digit
+        fmt.Print(digit, "")
+        x /= 10
+    }
+    fmt.Println("\n", total)
 	}
