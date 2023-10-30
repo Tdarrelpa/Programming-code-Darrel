@@ -1,0 +1,17 @@
+package main
+
+import "fmt" 
+
+func main(){
+    var x, y, n, m, kopi int
+    
+    fmt.Print("Masukkan 4 bilangan bulat: ")
+    fmt.Scan(&x, &y, &n, &m)
+    
+    for n <= x && m <= y { 
+        x = x - n
+        y = y - m
+        kopi++
+    }
+    fmt.Println("Kopi: ", kopi)
+}
