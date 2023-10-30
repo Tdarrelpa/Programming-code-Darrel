@@ -1,0 +1,27 @@
+package main
+
+import "fmt"
+
+func main() {
+    var username, password string
+    var login bool
+    var i int
+    
+    fmt.Println("Masukkan username dan password: ")
+    fmt.Scan(&username, &password)
+    
+    login = false
+    i = 0
+    
+    for !login {
+        if username != "admin" || password != "admin" {
+            i = i + 1
+            fmt.Println("username dan password salah, masukkan ulang: ")
+            fmt.Scan(&username, &password)
+        } else {
+            login = true
+            fmt.Println(i)
+            fmt.Println("Login berhasil!")
+        }
+    }
+}
