@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func main() {
+    var digit, dp, hasil, bagi int
+    var status bool = true
+    fmt.Print("Masukkan digit: ")
+    fmt.Scanln(&digit)
+    bagi = 10
+    dp = digit % 10
+    for len(fmt.Sprint(bagi)) <= len(fmt.Sprint(digit)) && status {
+        hasil = (digit / bagi) % 10
+        status = hasil - dp == 1 || hasil - dp == -1
+        dp = hasil
+        bagi = bagi * 10
+    }
+    fmt.Print(status)
+}
