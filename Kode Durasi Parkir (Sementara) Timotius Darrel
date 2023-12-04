@@ -1,0 +1,32 @@
+//Kode ini memakai format 24 jam, bukan 12. Makanya ditambah sementara pada nama repositori ini
+//Kode ini menggunakan kode nilai mutlak untuk menghindari nilai negatif
+
+package main
+
+import "fmt"
+
+func main () {
+    var jam1,menit1,jam2,menit2, lamaParkir1, lamaParkir2 int
+    
+    fmt.Print("Masukkan durasi parkir yang diinginkan: ")
+    fmt.Scan(&jam1,&menit1,&jam2,&menit2)
+    
+    durasiJamparkir := jam1 - jam2
+    durasiMenitparkir := menit1 - menit2 
+    
+    lamaParkir1 = durasiJamparkir * -1
+	if durasiJamparkir >= 0 {
+		fmt.Println(durasiJamparkir)
+	} else if durasiJamparkir <= 0 {
+		fmt.Println(lamaParkir1)
+	}
+	
+	 lamaParkir2 = durasiMenitparkir * -1
+	if durasiMenitparkir >= 0 {
+		fmt.Println(durasiMenitparkir)
+	} else if durasiJamparkir <= 0 {
+		fmt.Println(lamaParkir2)
+	}
+    
+    fmt.Printf("Lama parkir: %d jam, %d menit", lamaParkir1, lamaParkir2 )
+}
