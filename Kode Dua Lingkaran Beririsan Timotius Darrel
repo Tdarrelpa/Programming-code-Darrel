@@ -1,0 +1,37 @@
+package main
+
+import "fmt"
+
+func main() {
+    var r1,r2,j int
+    
+    fmt.Println("Masukkan jari-jari lingkaran 1, jari-jaeri lingkaran 2, dan jarak titik pusat kedua lingkaran:")
+    fmt.Scan(&r1,&r2,&j)
+    
+    takBeririsan := (r1 + r2) < j
+    fmt.Print(takBeririsan)
+}
+
+or
+
+package main
+
+import "fmt"
+
+func main() {
+	var r1, r2, pusat int
+	var irisan, a, b bool
+
+	fmt.Print("Masukan 2 nilai jari-jari lingkaran: ")
+	fmt.Scan(&r1, &r2)
+
+	fmt.Print("Masukan titik pusat: ")
+	fmt.Scan(&pusat)
+
+	a = r1 <= pusat || pusat <= r2
+	b = r1 > pusat || pusat > r2
+
+	irisan = a && b
+
+	fmt.Println("Apakah beririsan:", irisan)
+}
