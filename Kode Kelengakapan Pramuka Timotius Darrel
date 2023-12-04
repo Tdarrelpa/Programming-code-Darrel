@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+
+func main() {
+    var anggotaTim int
+    fmt.Print("Masukkan jumlah anggota tim:")
+    fmt.Scan(&anggotaTim)
+    
+    var hasil bool = true
+    for i := 0; i < anggotaTim; i++ {
+        var benda1, benda2, benda3, benda4, benda5 bool
+        
+        fmt.Printf("Masukkan status kelengkapan barang (benar/salah) untuk anggota tim %d: ")
+        fmt.Scan(&benda1,&benda2,&benda3,&benda4,&benda5)
+        
+        if !(benda1 && benda2 && benda3 && benda4 && benda5) {
+            hasil = false
+            break
+        }
+    }
+    
+    fmt.Println("Hasil:", hasil)
+}
