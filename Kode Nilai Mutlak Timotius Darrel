@@ -1,0 +1,17 @@
+package main
+
+import "fmt"
+
+func main() {
+	var angka, a int
+
+	fmt.Print("Masukkan angka: ")
+	fmt.Scan(&angka)
+
+	a = angka * -1
+	if angka >= 0 {
+		fmt.Println(angka)
+	} else if angka <= 0 {
+		fmt.Println(a)
+	}
+}
