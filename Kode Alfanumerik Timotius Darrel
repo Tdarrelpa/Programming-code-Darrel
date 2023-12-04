@@ -1,0 +1,22 @@
+package main
+
+import (
+    "fmt" 
+    "unicode"
+)
+
+func isAlphanumeric(k rune) bool {
+    return unicode.IsLetter(k) || unicode.IsDigit(k)
+}
+
+func main() {
+    var k rune
+    fmt.Println("Masukkan satu karakter:")
+    fmt.Scanf("%c", &k)
+    
+    if isAlphanumeric(k) {
+        fmt.Println("True.")
+    } else {
+        fmt.Println("False.")
+    }
+}
