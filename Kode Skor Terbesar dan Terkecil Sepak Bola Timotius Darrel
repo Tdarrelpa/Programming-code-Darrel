@@ -1,0 +1,34 @@
+package main
+
+import "fmt"
+
+func main () {
+     var ligaBola, i, palingSedikit, terBanyak int
+
+    fmt.Print("Masukkan jumlah gol suatu liga sepak bola = ")
+    fmt.Scan(&ligaBola)
+
+    bnyksdktGol := make([]int, ligaBola)
+
+    fmt.Print("Masukkan skor dari tiap gol suatu liga sepak bola  = ")
+    for i = 0; i < ligaBola; i++ {
+        fmt.Scan(&bnyksdktGol[i])
+    }
+    golBanyak := bnyksdktGol[0]
+    golSedikit := bnyksdktGol[0]
+
+    for i = 0; i < ligaBola; i++ {
+        if golBanyak < bnyksdktGol[i] {
+            golBanyak = bnyksdktGol[i]
+            terBanyak = i
+        }
+        if golSedikit > bnyksdktGol[i] {
+            golSedikit = bnyksdktGol[i]
+            palingSedikit = i
+        }
+    }
+    fmt.Println("\n Jumlah gol terbanyak = ", golBanyak)
+    fmt.Println("Jarak Nilai terbesar dari jumlah gol lain = ", terBanyak)
+    fmt.Println("\n Jumlah gol paling sedikit = ", golSedikit)
+    fmt.Println("Jarak Nilai terkecil dari jumlah gol lain = ", palingSedikit)
+}
