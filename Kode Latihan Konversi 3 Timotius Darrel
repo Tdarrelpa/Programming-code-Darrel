@@ -1,0 +1,45 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package latkonversi3;
+
+import Sub.TransaksiBayar;
+import Sub.Internet;
+import Master.Provider;
+
+/**
+ *
+ * @author asus
+ */
+public class LatKonversi3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Provider internet1 = new Internet("Matrix", "Indosat", 30000, 0, 300, 100, "Menit", "GSM");
+        Provider internet2 = new Internet("Hallo", "Telkomsel", 50000, 0, 500, 50, "Menit", "GSM");
+        Provider internet3 = new Internet("SmarFren", "Smart", 20000, 0, 200, 200, "Menit", "CDMA");
+        Provider internet4 = new Internet("Broom", "Indosat", 0, 100000, 0, 1000, "MB", "HSDPA");
+        Provider internet5 = new Internet("Flash", "Telkomsel", 0, 200000, 0, 500, "MB", "HSDPA");
+        Provider internet6 = new Internet("A-ha", "Esia", 0, 50000, 0, 2000, "MB", "EVDO");
+
+        System.out.printf("%10s %10s %8s %8s %10s %10s %10s %10s\n", "Layanan", "Provider", "Abodemen", "BiayaData", "BiayaTelp", "Batas", "Satuan", "Koneksi");
+        internet1.lihatData();
+        internet2.lihatData();
+        internet3.lihatData();
+        internet4.lihatData();
+        internet5.lihatData();
+        internet6.lihatData();
+        
+    }
+   public static void tampilkanTransaksiBayar(Provider provider, String pemakai, int jumlah) {
+        int kelebihan = provider.hitungKelebihan();
+        int tambahanBayar = provider.hitungTambahanBayar();
+        TransaksiBayar transaksi = new TransaksiBayar(1, pemakai, provider.getLayanan(), jumlah, kelebihan, provider.getSatuan(), tambahanBayar);
+
+        System.out.printf("%-5s %-10s %-10s %-8s %-8s %-10s %-15s\n", "No", "Pemakai", "Layanan", "Jumlah", "Kelebihan", "Satuan", "Tambahan Bayar");
+        transaksi.tampilkanTransaksi();
+    } 
+}
