@@ -1,0 +1,46 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package latkonversi5;
+
+import Sub.Motor;
+import Sub.Mobil;
+import Master.Kendaraan;
+
+/**
+ *
+ * @author asus
+ */
+public class LatKonversi5 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Kendaraan yamaha = new Motor("Yamaha", "motor", 12000000, 0, 3, "helm", 0);
+        Kendaraan honda = new Motor("Honda", "motor", 15000000, 0, 3, "helm", 0);
+        Kendaraan suzuki = new Motor("Suzuki", "motor", 12000000, 0, 3, "helm", 0);
+        Kendaraan mercedes = new Mobil("Mercedes", "mobil", 300000000, 10, 10, "-", 30);
+        Kendaraan toyota = new Mobil("Toyota", "mobil", 150000000, 10, 10, "-", 30);
+        Kendaraan ferrari = new Mobil("Ferari", "mobil", 1800000000, 10, 10, "-", 30);
+
+        System.out.printf("%12s %10s %11s %11s %8s %8s %8s\n", "Merk", "Jenis", "Harga", "Umuka", "CicilMax", "Bonus", "Pajak");
+        yamaha.lihatData();
+        honda.lihatData();
+        suzuki.lihatData();
+        mercedes.lihatData();
+        toyota.lihatData();
+        ferrari.lihatData();
+        
+        
+    }
+    public static void tampilkanDataKendaraan(Kendaraan kendaraan) {
+        System.out.printf("%12s %10s %11s %11s %8s %8s %8s\n", "Merk", "Jenis", "Harga", "Umuka", "CicilMax", "Bonus", "Pajak");
+        kendaraan.lihatData();
+        System.out.println("Uang Muka: " + kendaraan.hitungUangMuka());
+        System.out.println("Cicilan per Bulan: " + kendaraan.hitungCicilan());
+        System.out.println("Pajak: " + kendaraan.hitungPajak());
+        System.out.println("------------------------------------------");
+    }
+}
