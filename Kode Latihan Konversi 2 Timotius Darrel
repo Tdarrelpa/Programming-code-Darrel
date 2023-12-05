@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package latkonversi2;
+
+import Sub.Pelajaran;
+import Sub.Komik;
+import Master.Buku;
+
+/**
+ *
+ * @author asus
+ */
+public class LatKonversi2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Buku buku1 = new Pelajaran("Delphi", "Pelajaran", 0, "Algoritma", 7, 1000);
+        Buku buku2 = new Pelajaran("VB", "Pelajaran", 0, "Net", 7, 1000);
+        Buku buku3 = new Komik("Doraemon", "Komik", 51,"-", 2, 2000);
+        Buku buku4 = new Komik("Conan", "Komik", 23,"-", 2, 2000);
+        Buku buku5 = new Komik("Sinchan", "Komik", 17,"-", 2, 2000);
+
+        System.out.printf("%-10s %-10s %-3s %-12s %-5s %-5s\n", "Judul", "Jenis", "Vol", "Mata Kuliah", "Batas", "Sewa");
+        buku1.lihatData();
+        buku2.lihatData();
+        buku3.lihatData();
+        buku4.lihatData();
+        buku5.lihatData();
+        
+        int lamaPeminjaman = 10; 
+        int dendaBuku1 = buku1.hitungDenda(lamaPeminjaman);
+        System.out.println("Denda untuk " + buku1.getJudul() + ": " + dendaBuku1 + " rupiah");
+    }
+    
+}
