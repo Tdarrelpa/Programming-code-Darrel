@@ -1,0 +1,56 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+import Master.Menu;
+
+/**
+ *
+ * @author asus
+ */
+public class Makanan extends Menu {
+     private int batas;
+     private static int jmlmkn=0;
+     
+     public Makanan(){
+        super();batas=0;jmlmkn++;
+    }
+    public Makanan(String m,String j,int h,int a){
+        super(m,j,h);batas=a;jmlmkn++;
+    }
+
+    /**
+     * @return the batas
+     */
+    public int getBatas() {
+        return batas;
+    }
+
+    /**
+     * @param batas the batas to set
+     */
+    public void setBatas(int batas) {
+        this.batas = batas;
+    }
+
+    /**
+     * @return the jmlmkn
+     */
+    public static int getJmlmkn() {
+        return jmlmkn;
+    }
+
+    /**
+     * @param aJmlmkn the jmlmkn to set
+     */
+    public static void setJmlmkn(int aJmlmkn) {
+        jmlmkn = aJmlmkn;
+    }
+    @Override
+    public void lihatdata(){
+        System.out.printf("%20s %10s %7d %5d\n", 
+                getMenu(),getJenis(),getHarga(),getBatas());
+    }
+}
