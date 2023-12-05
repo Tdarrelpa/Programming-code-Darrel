@@ -1,0 +1,131 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Master;
+
+/**
+ *
+ * @author asus
+ */
+public class Buku {
+    private String judul;
+    private String jenis;
+    private int vol;
+    private String mataKuliah;
+    private int batas;
+    private int sewa;
+    
+    public Buku() {
+        this.judul = "";
+        this.jenis = "";
+        this.vol = 0;
+        this.mataKuliah = "";
+        this.batas = 0;
+        this.sewa = 0;
+    }
+    
+    public Buku(String judul, String jenis, int vol, String mataKuliah, int batas, int sewa) {
+        this.judul = judul;
+        this.jenis = jenis;
+        this.vol = vol;
+        this.mataKuliah = mataKuliah;
+        this.batas = batas;
+        this.sewa = sewa;
+    }
+
+    /**
+     * @return the judul
+     */
+    public String getJudul() {
+        return judul;
+    }
+
+    /**
+     * @param judul the judul to set
+     */
+    public void setJudul(String judul) {
+        this.judul = judul;
+    }
+
+    /**
+     * @return the jenis
+     */
+    public String getJenis() {
+        return jenis;
+    }
+
+    /**
+     * @param jenis the jenis to set
+     */
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+
+    /**
+     * @return the vol
+     */
+    public int getVol() {
+        return vol;
+    }
+
+    /**
+     * @param vol the vol to set
+     */
+    public void setVol(int vol) {
+        this.vol = vol;
+    }
+
+    /**
+     * @return the mataKuliah
+     */
+    public String getMataKuliah() {
+        return mataKuliah;
+    }
+
+    /**
+     * @param mataKuliah the mataKuliah to set
+     */
+    public void setMataKuliah(String mataKuliah) {
+        this.mataKuliah = mataKuliah;
+    }
+
+    /**
+     * @return the batas
+     */
+    public int getBatas() {
+        return batas;
+    }
+
+    /**
+     * @param batas the batas to set
+     */
+    public void setBatas(int batas) {
+        this.batas = batas;
+    }
+
+    /**
+     * @return the sewa
+     */
+    public int getSewa() {
+        return sewa;
+    }
+
+    /**
+     * @param sewa the sewa to set
+     */
+    public void setSewa(int sewa) {
+        this.sewa = sewa;
+    }
+    public void lihatData() {
+        System.out.printf("%-10s %-10s %-3d %-12s %-5d %-5d\n", judul, jenis, vol, mataKuliah, batas, sewa);
+    }
+    
+    public int hitungDenda(int lamaPeminjaman) {
+        int denda = 0;
+        if(lamaPeminjaman>batas) {
+            denda=(lamaPeminjaman-batas)*1000;
+        }
+        return denda;
+    }
+}
