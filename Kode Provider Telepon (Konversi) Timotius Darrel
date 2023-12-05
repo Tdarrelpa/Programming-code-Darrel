@@ -1,0 +1,17 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+import Master.Provider;
+
+/**
+ *
+ * @author asus
+ */
+public class Telepon extends Provider {
+    public Telepon(String layanan, String provider, int abodemen, int biayaData, int biayaTelp, int batas, String satuan, String koneksi) {
+        super(layanan, provider, abodemen, biayaData, biayaTelp, batas, satuan, koneksi);
+    }
+}
