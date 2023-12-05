@@ -1,0 +1,82 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Master;
+
+/**
+ *
+ * @author asus
+ */
+public class Matakuliah {
+    String namamatkul,dosenpengajar;
+    int jumlahsks;
+    double jammasuk;
+    char kodematkul;
+    private static double totaljammasuk=0.0;
+    
+    public Matakuliah(){
+        namamatkul="tidak ada";dosenpengajar="tidak ada";jumlahsks=0;jammasuk=0.00;kodematkul='0';
+    }
+    public Matakuliah(String nm, String dp, int js, double jm, char kt ){
+        namamatkul=nm;dosenpengajar=dp;jumlahsks=js;jammasuk=jm;kodematkul=kt;totaljammasuk+= jm;
+    }
+
+    public String getNamamatkul() {
+        return namamatkul;
+    }
+
+    public void setNamamatkul(String namamatkul) {
+        this.namamatkul = namamatkul;
+    }
+
+    public String getDosenpengajar() {
+        return dosenpengajar;
+    }
+
+    public void setDosenpengajar(String dosenpengajar) {
+        this.dosenpengajar = dosenpengajar;
+    }
+
+    public int getJumlahsks() {
+        return jumlahsks;
+    }
+
+    public void setJumlahsks(int jumlahsks) {
+        this.jumlahsks = jumlahsks;
+    }
+
+    public double getJammasuk() {
+        return jammasuk;
+    }
+
+    public void setJammasuk(double jammasuk) {
+        this.jammasuk = jammasuk;
+        totaljammasuk += jammasuk;
+    }
+
+    public char getKodematkul() {
+        return kodematkul;
+    }
+
+    public void setKodematkul(char kodematkul) {
+        this.kodematkul = kodematkul;
+    }
+    
+    public static double getTotaljammasuk() {
+        return totaljammasuk;
+    }
+    
+    public void setTotaljammasuk(double totaljammasuk){
+        Matakuliah.totaljammasuk = jammasuk;
+    }
+    public void lihatdata(){
+            System.out.printf("%25s %20s %15d %15f %15c\n", namamatkul,dosenpengajar,jumlahsks,jammasuk,kodematkul);
+        }
+    
+    public double hitungtotaljammasuk(double jm){
+        return (totaljammasuk+jm);
+    }
+    
+    
+}
