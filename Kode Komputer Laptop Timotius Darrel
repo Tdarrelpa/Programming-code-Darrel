@@ -1,0 +1,57 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+import Master.Komputer;
+
+/**
+ *
+ * @author asus
+ */
+public class Komputerlaptop extends Komputer {
+    private String Jenisbaterai;
+    private boolean Touchscreen;
+    
+    public Komputerlaptop(){
+        super();Jenisbaterai="Tidak tahu";Touchscreen=true;
+    }
+    public Komputerlaptop(String er, String p, String m, int jr, double kp, char ko, boolean ki, String jb, boolean ts){
+        super(er,p,m,jr,kp,ko,ki);Jenisbaterai=jb;Touchscreen=ts;
+    }
+
+    /**
+     * @return the Jenisbaterai
+     */
+    public String getJenisbaterai() {
+        return Jenisbaterai;
+    }
+
+    /**
+     * @param Jenisbaterai the Jenisbaterai to set
+     */
+    public void setJenisbaterai(String Jenisbaterai) {
+        this.Jenisbaterai = Jenisbaterai;
+    }
+
+    /**
+     * @return the Touchscreen
+     */
+    public boolean isTouchscreen() {
+        return Touchscreen;
+    }
+
+    /**
+     * @param Touchscreen the Touchscreen to set
+     */
+    public void setTouchscreen(boolean Touchscreen) {
+        this.Touchscreen = Touchscreen;
+    }
+    
+    @Override
+    public void lihatdata(){
+    System.out.printf("%15s %15s %15s %17d %17f %17c %12.9b %20s %20b\n", 
+                getMerk(),getProcessor(),getModel(),getJumlahRAM(),getKecepatanProcessor(),getKodeproduk(),isKondisi(),Jenisbaterai,Touchscreen);
+    }
+}
