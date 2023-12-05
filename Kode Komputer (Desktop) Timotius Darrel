@@ -1,1 +1,56 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
 
+import Master.Komputer;
+
+/**
+ *
+ * @author asus
+ */
+public class Komputerdesktop extends Komputer {
+    private int Ukuranmonitor,Jumlahmonitor;
+    
+    public Komputerdesktop(){
+        super();Ukuranmonitor=0;Jumlahmonitor=0;
+    }
+    public Komputerdesktop(String er, String p, String m, int jr, double kp, char ko, boolean ki, int mo, int jo){
+        super(er,p,m,jr,kp,ko,ki);Ukuranmonitor=mo;Jumlahmonitor=jo;
+    }
+
+    /**
+     * @return the Ukuranmonitor
+     */
+    public int getUkuranmonitor() {
+        return Ukuranmonitor;
+    }
+
+    /**
+     * @param Ukuranmonitor the Ukuranmonitor to set
+     */
+    public void setUkuranmonitor(int Ukuranmonitor) {
+        this.Ukuranmonitor = Ukuranmonitor;
+    }
+
+    /**
+     * @return the Jumlahmonitor
+     */
+    public int getJumlahmonitor() {
+        return Jumlahmonitor;
+    }
+
+    /**
+     * @param Jumlahmonitor the Jumlahmonitor to set
+     */
+    public void setJumlahmonitor(int Jumlahmonitor) {
+        this.Jumlahmonitor = Jumlahmonitor;
+    }
+    
+    @Override
+    public void lihatdata(){
+    System.out.printf("%15s %15s %15s %17d %17f %17c %12.9b %20d %20d\n", 
+                getMerk(),getProcessor(),getModel(),getJumlahRAM(),getKecepatanProcessor(),getKodeproduk(),isKondisi(),Ukuranmonitor,Jumlahmonitor);
+    }
+}
