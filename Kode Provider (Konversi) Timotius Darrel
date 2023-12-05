@@ -1,0 +1,170 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Master;
+
+/**
+ *
+ * @author asus
+ */
+public class Provider {
+    private String layanan;
+    private String provider;
+    private int abodemen;
+    private int biayaData;
+    private int biayaTelp;
+    private int batas;
+    private String satuan;
+    private String koneksi;
+
+    public Provider() {
+        this.layanan = "";
+        this.provider = "";
+        this.abodemen = 0;
+        this.biayaData = 0;
+        this.biayaTelp = 0;
+        this.batas = 0;
+        this.satuan = "";
+        this.koneksi = "";
+    }
+    
+    public Provider(String layanan, String provider, int abodemen, int biayaData, int biayaTelp, int batas, String satuan, String koneksi) {
+        this.layanan = layanan;
+        this.provider = provider;
+        this.abodemen = abodemen;
+        this.biayaData = biayaData;
+        this.biayaTelp = biayaTelp;
+        this.batas = batas;
+        this.satuan = satuan;
+        this.koneksi = koneksi;
+    }
+    
+    /**
+     * @return the layanan
+     */
+    public String getLayanan() {
+        return layanan;
+    }
+
+    /**
+     * @param layanan the layanan to set
+     */
+    public void setLayanan(String layanan) {
+        this.layanan = layanan;
+    }
+
+    /**
+     * @return the provider
+     */
+    public String getProvider() {
+        return provider;
+    }
+
+    /**
+     * @param provider the provider to set
+     */
+    public void setProvider(String provider) {
+        this.provider = provider;
+    }
+
+    /**
+     * @return the abodemen
+     */
+    public int getAbodemen() {
+        return abodemen;
+    }
+
+    /**
+     * @param abodemen the abodemen to set
+     */
+    public void setAbodemen(int abodemen) {
+        this.abodemen = abodemen;
+    }
+
+    /**
+     * @return the biayaData
+     */
+    public int getBiayaData() {
+        return biayaData;
+    }
+
+    /**
+     * @param biayaData the biayaData to set
+     */
+    public void setBiayaData(int biayaData) {
+        this.biayaData = biayaData;
+    }
+
+    /**
+     * @return the biayaTelp
+     */
+    public int getBiayaTelp() {
+        return biayaTelp;
+    }
+
+    /**
+     * @param biayaTelp the biayaTelp to set
+     */
+    public void setBiayaTelp(int biayaTelp) {
+        this.biayaTelp = biayaTelp;
+    }
+
+    /**
+     * @return the batas
+     */
+    public int getBatas() {
+        return batas;
+    }
+
+    /**
+     * @param batas the batas to set
+     */
+    public void setBatas(int batas) {
+        this.batas = batas;
+    }
+
+    /**
+     * @return the satuan
+     */
+    public String getSatuan() {
+        return satuan;
+    }
+
+    /**
+     * @param satuan the satuan to set
+     */
+    public void setSatuan(String satuan) {
+        this.satuan = satuan;
+    }
+
+    /**
+     * @return the koneksi
+     */
+    public String getKoneksi() {
+        return koneksi;
+    }
+
+    /**
+     * @param koneksi the koneksi to set
+     */
+    public void setKoneksi(String koneksi) {
+        this.koneksi = koneksi;
+    }
+    public void lihatData() {
+        System.out.printf("%10s %10s %8d %8d %10d %10d %10s %10s\n", layanan, provider, abodemen, biayaData, biayaTelp, batas, satuan, koneksi);
+    }
+    
+    public int hitungKelebihan() {
+    if (getBatas() > 0) {
+        int totalPemakaian = getBiayaData() + getBiayaTelp();
+        return Math.max(0, totalPemakaian - getBatas());
+    }
+    return 0;
+}
+    public int hitungTambahanBayar() {
+    int kelebihan = hitungKelebihan();
+    int biayaTambahan = 1;
+    return kelebihan * biayaTambahan;
+}
+}
