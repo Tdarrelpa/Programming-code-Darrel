@@ -1,0 +1,17 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+import Master.Buku;
+
+/**
+ *
+ * @author asus
+ */
+public class Pelajaran extends Buku {
+    public Pelajaran(String judul, String jenis, int vol, String mataKuliah, int batas, int sewa) {
+        super(judul, jenis, vol, mataKuliah, batas, sewa);
+    }
+}
