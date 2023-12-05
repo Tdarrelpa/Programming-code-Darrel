@@ -1,0 +1,138 @@
+*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Master;
+
+/**
+ *
+ * @author asus
+ */
+public class Komputer {
+    private String merk;
+    private String processor;
+    private String model;
+    private int jumlahRAM;
+    private double kecepatanProcessor;
+    private char kodeproduk;
+    private boolean kondisi;
+    private static int jumlahRAMterkecil=Integer.MAX_VALUE;
+
+    public Komputer(){
+        merk="tidak ada";processor="tidak ada";model="tidak ada";jumlahRAM=0;kecepatanProcessor=0.0;kodeproduk='A';kondisi=false;
+    }
+    
+    public Komputer(String er, String p, String m, int jr, double kp, char ko, boolean ki){
+        merk=er;processor=p;model=m;jumlahRAM=jr;kecepatanProcessor=kp;kodeproduk=ko;kondisi=ki;
+    }
+    
+    /**
+     * @return the merk
+     */
+    public String getMerk() {
+        return merk;
+    }
+
+    /**
+     * @param merk the merk to set
+     */
+    public void setMerk(String merk) {
+        this.merk = merk;
+    }
+
+    /**
+     * @return the processor
+     */
+    public String getProcessor() {
+        return processor;
+    }
+
+    /**
+     * @param processor the processor to set
+     */
+    public void setProcessor(String processor) {
+        this.processor = processor;
+    }
+
+    /**
+     * @return the model
+     */
+    public String getModel() {
+        return model;
+    }
+
+    /**
+     * @param model the model to set
+     */
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    /**
+     * @return the jumlahRAM
+     */
+    public int getJumlahRAM() {
+        return jumlahRAM;
+    }
+
+    /**
+     * @param jumlahRAM the jumlahRAM to set
+     */
+    public void setJumlahRAM(int jumlahRAM) {
+        this.jumlahRAM = jumlahRAM;
+        if(jumlahRAM<jumlahRAMterkecil){
+            jumlahRAMterkecil = jumlahRAM;
+        }
+    }
+
+    /**
+     * @return the kecepatanProcessor
+     */
+    public double getKecepatanProcessor() {
+        return kecepatanProcessor;
+    }
+
+    /**
+     * @param kecepatanProcessor the kecepatanProcessor to set
+     */
+    public void setKecepatanProcessor(double kecepatanProcessor) {
+        this.kecepatanProcessor = kecepatanProcessor;
+    }
+
+    /**
+     * @return the kodeproduk
+     */
+    public char getKodeproduk() {
+        return kodeproduk;
+    }
+
+    /**
+     * @param kodeproduk the kodeproduk to set
+     */
+    public void setKodeproduk(char kodeproduk) {
+        this.kodeproduk = kodeproduk;
+    }
+
+    /**
+     * @return the kondisi
+     */
+    public boolean isKondisi() {
+        return kondisi;
+    }
+
+    /**
+     * @param kondisi the kondisi to set
+     */
+    public void setKondisi(boolean kondisi) {
+        this.kondisi = kondisi;
+    }
+    
+    public void lihatdata(){
+    System.out.printf("%15s %15s %15s %17d %17f %17c %12.9b\n", 
+                merk,processor,model,jumlahRAM,kecepatanProcessor,kodeproduk,kondisi);
+    }
+    
+    public static int getJumlahRAMterkecil(){
+        return jumlahRAMterkecil;
+}
+}
