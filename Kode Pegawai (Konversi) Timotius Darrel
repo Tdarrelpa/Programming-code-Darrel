@@ -1,0 +1,17 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+import Master.Pekerja;
+
+/**
+ *
+ * @author asus
+ */
+public class Pegawai extends Pekerja {
+    public Pegawai(String jabatan, String jenis, int pokok, int lembur, int ujam, int umakan, int utranspor) {
+        super(jabatan, jenis, pokok, lembur, ujam, umakan, utranspor);
+    }
+}
