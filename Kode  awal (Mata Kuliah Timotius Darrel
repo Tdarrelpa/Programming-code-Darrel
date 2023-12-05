@@ -1,0 +1,49 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package awal3;
+
+import Sub.Matakuliahteori;
+import Sub.Matakuliahpraktek;
+import Master.Matakuliah;
+
+/**
+ *
+ * @author asus
+ */
+public class Awal3 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Matakuliah m1=new Matakuliah();
+        m1.setNamamatkul("Kalkulus");
+        m1.setDosenpengajar("Bu Asri");
+        m1.setJumlahsks(4);
+        m1.setJammasuk(8.30);
+        m1.setKodematkul('3');
+        Matakuliah m2=new Matakuliah("Bahasa Jepang", "Pa Hadi", 2, 10.30, '6');
+        Matakuliah m3=new Matakuliah("Logika", "Bu Sri", 3, 13.00, '7');
+        Matakuliah m4=new Matakuliah("Biologi", "Bu Anton", 4, 15.00, '9');
+        Matakuliah m5=new Matakuliah("Pemrograman", "Pa Dayat", 6, 17.30, '1');
+        
+        System.out.printf("%25s %20s %15s %15s %15s\n", "namamatkul","dosenpengajar","jumlahsks","jammasuk","kodematkul");
+        
+        m1.lihatdata();
+        m2.lihatdata();
+        m3.lihatdata();
+        m4.lihatdata();
+        m5.lihatdata();
+        
+        Matakuliah m6=new Matakuliahteori("Rekayasa Perangkat Lunak", "Bu Hana", 4, 10.30, '2', "Pemrograman");
+        Matakuliah m7=new Matakuliahpraktek("Visualisasi Data", "Pa Andi", 2, 08.30, '4', 2);
+        
+        m6.lihatdata();
+        m7.lihatdata();
+        
+        System.out.println("totaljammasuk: " + Matakuliah.getTotaljammasuk());
+    }
+    
+}
