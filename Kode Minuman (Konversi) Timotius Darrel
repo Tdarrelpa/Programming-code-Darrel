@@ -1,0 +1,57 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+import Master.Menu;
+
+/**
+ *
+ * @author asus
+ */
+public class Minuman extends Menu {
+    private int es;
+    private static int jmlmnm=0;
+
+     public Minuman(){
+        super();es=0;jmlmnm++;
+    }
+
+    public Minuman(String m,String j,int h,int e) {
+        super(m,j,h);es=e;jmlmnm++;
+    }
+    
+    /**
+     * @return the es
+     */
+    public int getEs() {
+        return es;
+    }
+
+    /**
+     * @param es the es to set
+     */
+    public void setEs(int es) {
+        this.es = es;
+    }
+
+    /**
+     * @return the jmlmnm
+     */
+    public static int getJmlmnm() {
+        return jmlmnm;
+    }
+
+    /**
+     * @param aJmlmnm the jmlmnm to set
+     */
+    public static void setJmlmnm(int aJmlmnm) {
+        jmlmnm = aJmlmnm;
+    }
+    
+    public void lihadata(){
+        System.out.printf("%20s %10s %7d %5d %5d\n", 
+                getMenu(),getJenis(),getHarga(),getEs(),getJmlmnm());
+    }
+    }
