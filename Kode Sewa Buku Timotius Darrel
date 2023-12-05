@@ -1,0 +1,101 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package kelas3;
+
+/**
+ *
+ * @author asus
+ */
+public class Buku {
+    private String jenis;
+    private int keluaran;
+    private int sewaperhari;
+    private int batas;
+    
+    public Buku() {
+        jenis="Kosong";keluaran=0;sewaperhari=0;batas=0;
+    }
+
+    public Buku(String j) {
+        jenis=j;keluaran=0;sewaperhari=0;batas=0;
+    }
+
+    public Buku(String j, int k) {
+        jenis=j;keluaran=k;sewaperhari=0;batas=0;
+    }
+
+    public Buku(String j, int k, int s) {
+        jenis=j;keluaran=k;sewaperhari=s;batas=0;
+    }
+
+    public Buku(String j, int k, int s, int b) {
+        jenis=j;keluaran=k;sewaperhari=s;batas=b;
+    }
+
+    /**
+     * @return the jenis
+     */
+    public String getJenis() {
+        return jenis;
+    }
+
+    /**
+     * @param jenis the jenis to set
+     */
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+
+    /**
+     * @return the keluaran
+     */
+    public int getKeluaran() {
+        return keluaran;
+    }
+
+    /**
+     * @param keluaran the keluaran to set
+     */
+    public void setKeluaran(int keluaran) {
+        this.keluaran = keluaran;
+    }
+
+    /**
+     * @return the sewaperhari
+     */
+    public int getSewaperhari() {
+        return sewaperhari;
+    }
+
+    /**
+     * @param sewaperhari the sewaperhari to set
+     */
+    public void setSewaperhari(int sewaperhari) {
+        this.sewaperhari = sewaperhari;
+    }
+
+    /**
+     * @return the batas
+     */
+    public int getBatas() {
+        return batas;
+    }
+
+    /**
+     * @param batas the batas to set
+     */
+    public void setBatas(int batas) {
+        this.batas = batas;
+    }
+    
+    public void lihatdata() {
+        int umur = 2023 - keluaran;
+        System.out.println("Jenis : " + jenis);
+        System.out.println("Keluaran : " + keluaran);
+        System.out.println("Sewa/hari: Rp " + sewaperhari);
+        System.out.println("Batas : " + batas + " hari");
+        System.out.println("Umur : " + umur);
+    }
+}
