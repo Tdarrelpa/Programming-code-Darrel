@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+import Master.Kendaraan;
+
+/**
+ *
+ * @author asus
+ */
+public class KendaraanR4 extends Kendaraan {
+    private int Kapasitaspenumpang;
+    
+    public KendaraanR4(){
+        super();Kapasitaspenumpang=0;
+    }
+    public KendaraanR4(String m, String jr, String tp, int kc, double bb, int kp){
+        super(m,jr,tp,kc,bb);Kapasitaspenumpang=kp;
+    }
+
+    /**
+     * @return the Kapasitaspenumpang
+     */
+    public int getKapasitaspenumpang() {
+        return Kapasitaspenumpang;
+    }
+
+    /**
+     * @param Kapasitaspenumpang the Kapasitaspenumpang to set
+     */
+    public void setKapasitaspenumpang(int Kapasitaspenumpang) {
+        this.Kapasitaspenumpang = Kapasitaspenumpang;
+    }
+    
+    @Override
+    public void lihatdata(){
+        System.out.printf("%20s %20s %20s %20d %15.10f %25d\n",
+                getMerk(),getJumlahroda(),getTahunpembuatan(),getKecepatan(),getBahanbakar(),Kapasitaspenumpang);
+    }
+}
