@@ -1,0 +1,161 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Master;
+
+import Sub.Mobil;
+
+/**
+ *
+ * @author asus
+ */
+public class Kendaraan {
+    private String merk;
+    private String jenis;
+    private int harga;
+    private int umuka;
+    private int cicilMax;
+    private String bonus;
+    private int pajak;
+    
+    public Kendaraan(String merk, String jenis, int harga, int umuka, int cicilMax, String bonus, int pajak) {
+        this.merk = merk;
+        this.jenis = jenis;
+        this.harga = harga;
+        this.umuka = umuka;
+        this.cicilMax = cicilMax;
+        this.bonus = bonus;
+        this.pajak = pajak;
+    }
+
+    /**
+     * @return the merk
+     */
+    public String getMerk() {
+        return merk;
+    }
+
+    /**
+     * @param merk the merk to set
+     */
+    public void setMerk(String merk) {
+        this.merk = merk;
+    }
+
+    /**
+     * @return the jenis
+     */
+    public String getJenis() {
+        return jenis;
+    }
+
+    /**
+     * @param jenis the jenis to set
+     */
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+
+    /**
+     * @return the harga
+     */
+    public int getHarga() {
+        return harga;
+    }
+
+    /**
+     * @param harga the harga to set
+     */
+    public void setHarga(int harga) {
+        this.harga = harga;
+    }
+
+    /**
+     * @return the umuka
+     */
+    public int getUmuka() {
+        return umuka;
+    }
+
+    /**
+     * @param umuka the umuka to set
+     */
+    public void setUmuka(int umuka) {
+        this.umuka = umuka;
+    }
+
+    /**
+     * @return the cicilMax
+     */
+    public int getCicilMax() {
+        return cicilMax;
+    }
+
+    /**
+     * @param cicilMax the cicilMax to set
+     */
+    public void setCicilMax(int cicilMax) {
+        this.cicilMax = cicilMax;
+    }
+
+    /**
+     * @return the bonus
+     */
+    public String getBonus() {
+        return bonus;
+    }
+
+    /**
+     * @param bonus the bonus to set
+     */
+    public void setBonus(String bonus) {
+        this.bonus = bonus;
+    }
+
+    /**
+     * @return the pajak
+     */
+    public int getPajak() {
+        return pajak;
+    }
+
+    /**
+     * @param pajak the pajak to set
+     */
+    public void setPajak(int pajak) {
+        this.pajak = pajak;
+    }
+    public int hitungUangMuka() {
+        if (this instanceof Mobil) {
+            return (int) (0.10 * getHarga());
+        } else {
+            return 0;
+        }
+    }
+     public int hitungCicilan() {
+        double bunga = 0.10;
+        int tahun = (this instanceof Mobil) ? getCicilMax() : 3;
+        double bungaTambahan = 0.005;
+        int cicilan = (int) (getHarga() - hitungUangMuka());
+
+        for (int i = 0; i < tahun; i++) {
+            bunga += bungaTambahan;
+            cicilan += cicilan * bunga;
+        }
+
+        int cicilanBulanan = cicilan / (tahun * 12);
+        return cicilanBulanan;
+    }
+     public int hitungPajak() {
+        if (this instanceof Mobil) {
+            return (int) (0.30 * getHarga());
+        } else {
+            return 0;
+        }
+     }
+    
+    public void lihatData() {
+        System.out.printf("%12s %10s %11d %11d %8d %8s %8d\n", merk, jenis, harga, umuka, cicilMax, bonus, pajak);
+    }
+}
