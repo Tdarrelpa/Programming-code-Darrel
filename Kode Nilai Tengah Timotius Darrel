@@ -1,19 +1,18 @@
 package main
 
 import (
-    "fmt" 
-    "math"
+	"fmt"
+	"math"
 )
-func main () {
-    var x,y,z float64
-    fmt.Println("Nilai: ")
-    fmt.Scan(&x,&y,&z)
-    
-    max1 := math.Max(x,y)
-    max2 := math.Max(max1,z)
-    min1 := math.Min(x,y)
-    min2 := math.Min(min1,z)
-    
-    hasil := max2 - min2
-    fmt.Println(hasil/2 == x || hasil/2 == y || hasil/2 == z)
+
+func main() {
+	var x,y,z float64;
+	fmt.Print("Nilai : ");
+	fmt.Scan(&x,&y,&z);
+	max := math.Max(x,y);
+	max = math.Max(max, z)
+	min := math.Min(x,y);
+	min = math.Min(min, z)
+ 	hasil := max + min
+	fmt.Println( hasil/2 == x || hasil/2== y || hasil/2 == z);
 }
