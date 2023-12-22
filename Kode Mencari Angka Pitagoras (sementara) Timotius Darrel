@@ -1,1 +1,37 @@
-?
+//bukan kode yang benar, karena masih ada error. Makanya disebut sementara
+//tolong jangan dikopi-paste, kecuali akan merevisi kode ini
+//bila akan merevisi kode ini, hubungi saya terlebih dahulu karena anda wajib memberikan hasil revisinya kepada saya
+//uji coba kode yang direvisi dengan nilai n = 2 dan m = 1, jika hasil a = 3, b = 4, c = 5, berarti kodenya sudah benar
+
+package main
+
+import "fmt"
+
+func main() {
+    var n, m, a, b, c int
+    fmt.Scan(&n,&m)
+    
+    if ((n%2 == 0) && (m%2 == 0) || ((n%2 != 0) && (m%2 != 0)) || (n == m)){
+        return false
+    }
+    if ((gcd(n,m) == 1) && (n > m >= 1)){
+        a := n*n - m*m
+        b := 2*n*m
+        c := n*n + m*m
+    } else {
+        return false
+    }
+
+    fmt.Printf("The primitive phythagorean number from n and m is: ", a, b, c)
+}
+
+func gcd(n int,m int) int {
+   for n != m {
+      if m < n {
+         return gcd(n - m,m)
+      } else {
+         return gcd(n,m - n)
+      }
+   }
+   return n
+}
