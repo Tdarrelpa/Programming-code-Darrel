@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func main(){
+	var hasil1, hasil2, hasil3, hasil4, hasil5 string
+	
+	fmt.Scan(&hasil1, &hasil2, &hasil3, &hasil4, &hasil5)
+	
+	if hasil1 == kalah && hasil2 == kalah && hasil3 == kalah && hasil4 == kalah && hasil5 == kalah{
+		fmt.Println("dipecat")
+	} else {
+		fmt.Println("tidak dipecat")
+	}
+}
