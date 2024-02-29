@@ -9,8 +9,8 @@ func main(){
     fmt.Scan(&x, &y, &n, &m)
     
     for n <= x && m <= y { 
-        x = x - n
-        y = y - m
+        x -= n
+        y -= m
         kopi++
     }
     fmt.Println("Kopi: ", kopi)
