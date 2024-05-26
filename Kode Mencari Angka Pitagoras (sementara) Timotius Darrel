@@ -1,37 +1,67 @@
-//bukan kode yang benar, karena masih ada error. Makanya disebut sementara
-//tolong jangan dikopi-paste, kecuali akan merevisi kode ini
-//bila akan merevisi kode ini, hubungi saya terlebih dahulu karena anda wajib memberikan hasil revisinya kepada saya
-//uji coba kode yang direvisi dengan nilai n = 2 dan m = 1, jika hasil a = 3, b = 4, c = 5, berarti kodenya sudah benar
+//Kode yang telah direvisi
+//Input telah diuji coba dan hasil (Output) sudah benar, jadi silahkan dipakai
 
 package main
 
 import "fmt"
 
 func main() {
-    var n, m, a, b, c int
-    fmt.Scan(&n,&m)
-    
-    if ((n%2 == 0) && (m%2 == 0) || ((n%2 != 0) && (m%2 != 0)) || (n == m)){
-        return false
-    }
-    if ((gcd(n,m) == 1) && (n > m >= 1)){
-        a := n*n - m*m
-        b := 2*n*m
-        c := n*n + m*m
-    } else {
-        return false
-    }
+	var x, y int
+	fmt.Scan(&x, &y)
 
-    fmt.Printf("The primitive phythagorean number from n and m is: ", a, b, c)
+	TrigonometriPrimitif(x, y)
 }
 
-func gcd(n int,m int) int {
-   for n != m {
-      if m < n {
-         return gcd(n - m,m)
+func TrigonometriPrimitif(n int, m int) {
+	if (n%2 == 0) != (m%2 == 0) {  
+    /* 
+    Alternatif: 
+    if ((n%2 == 0) || (m%2 == 0)) && !((n%2 == 0) && (m%2 == 0))
+    */
+		if n > m && m >= 1  {
+			if gcd(n, m) == 1 {
+				a := n*n - m*m
+				b := 2 * n * m
+				c := n*n + m*m
+				fmt.Printf("%d %d %d", a, b, c)
+			} else {
+				fmt.Println("Bilangan tidak valid, masukkan nilai lain")
+			}
+		} else {
+			fmt.Println("Bilangan tidak valid, masukkan nilai lain")
+		}
+	} else {
+		fmt.Println("Bilangan tidak valid, masukkan nilai lain")
+	}
+}
+
+// Mencari FPB dengan for-loop dan if-else
+func gcd(x int, y int) int {
+	if x == 0 {
+		return y
+	}
+
+	for y != 0 {
+		if x > y {
+			x -= y
+		} else {
+			y -= x
+		}
+	}
+
+	return x
+}
+
+/*
+Alternatif dengan Rekursif:
+func gcd(x int,y int) int {
+   for x != y {
+      if y < x {
+         return gcd(x - y, y)
       } else {
-         return gcd(n,m - n)
+         return gcd(x ,y - x)
       }
    }
    return n
 }
+*/
