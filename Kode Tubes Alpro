@@ -1,0 +1,300 @@
+package main
+
+import (
+	"fmt"
+	"os"
+	"text/tabwriter"
+)
+
+// Penyataan konstanta
+const NMAX int = 1024
+
+// Struct yang akan dipakai
+type User struct {
+	Name      string
+	Address   string
+	NPWP      string
+	TaxType   string
+	Assets    int
+	AssetType string
+}
+
+type Vehicle struct {
+	RegistrationNumber string
+	VehicleType        string
+	TaxInfo            VehicleTaxInfo
+}
+
+type VehicleTaxInfo struct {
+	RegistrationDate string
+	EngineSize       string
+	FuelType         string
+	PlateNumber      rune
+	Value            int
+	SNI              int
+}
+
+// Tipe Alias yang akan dipakai
+type tabUser [NMAX]User
+type tabVehicle [NMAX]Vehicle
+
+// Variabel global
+var users tabUser
+var vehicles tabVehicle
+var userCount, vehicleCount int
+
+// Menu utama
+func main() {
+	var pilih int
+	var exit bool = true
+
+	for exit {
+		printMenu()
+		fmt.Print("Pilih menu: ")
+		fmt.Scan(&pilih)
+		if pilih == 1 {
+			inputDataUser()
+		} else if pilih == 2 {
+			inputDataVehicle()
+		} else if pilih == 3 {
+			sortUsers()
+			printAllUsers()
+		} else if pilih == 4 {
+		    sortVehicles()
+		    printAllVehicles()
+		} else if pilih == 5 {
+			tax := calculateVehicleTax()
+			printTaxData(tax)
+		} else if pilih == 6 {
+			highestAssetUser := findUserWithHighestAsset()
+			printUserData(highestAssetUser)
+		} else if pilih == 7 {
+			editAssetData()
+		} else if pilih == 8 {
+			eraseAssetData()
+		} else if pilih == 9 {
+			exit = false
+		} else {
+			fmt.Println("Pilihan tidak valid. Silakan coba lagi.")
+		}
+	}
+}
+
+func printMenu() {
+	fmt.Println("|==========================================|")
+	fmt.Println("|           Selamat datang di              |")
+	fmt.Println("|          Aplikasi perpajakan             |")
+	fmt.Println("|==========================================|")
+	fmt.Println("|                M E N U                   |")
+	fmt.Println("|==========================================|")
+	fmt.Println("|1. Input Data Pengguna dan kendaraan      |")
+	fmt.Println("|2. Cek tipe kendaraan                     |")
+	fmt.Println("|3. Urutkan data pengguna                  |")
+	fmt.Println("|4. Urutkan data kendaraan                 |")
+	fmt.Println("|5. Hitung data pajak                      |")
+	fmt.Println("|6. Cari pemilik aset terbanyak            |")
+	fmt.Println("|7. Edit Aset Data                         |")
+	fmt.Println("|8. Hapus Aset data                        |")
+	fmt.Println("|9. Keluar program                         |")
+	fmt.Println("|==========================================|")
+}
+
+// Buat input data pengguna
+func inputDataUser() {
+	var name, address, npwp, taxType, assetType string
+	var assets int
+	for userCount < NMAX {
+		fmt.Println("Masukkan Nama User,  Address, NPWP, TaxType, Assets, AssetType / Ketik 'Done' Untuk Berhenti:")
+		fmt.Scanln(&name, &address, &npwp, &taxType, &assets, &assetType)
+		if name == users[userCount].Name {
+		    fmt.Println("Nama sudah ada")
+		}
+		if name == "Done" {
+		    return
+		}
+
+		users[userCount] = User{name, address, npwp, taxType, assets, assetType}
+		userCount++
+	}
+}
+
+// Buat input data kendaraan
+func inputDataVehicle() {
+    var regNumber, vehicleType, regDate, engineSize, fuelType string
+	var plateNumber rune
+	var sni int
+	var n int
+	fmt.Println("Masukkan Jumlah Kendaraan:")
+	fmt.Scan(&n)
+	vehicleCount = n
+	for vehicleCount < NMAX {
+		fmt.Println("Masukkan Registration Number, Vehicle Type, Registration Date, Engine Size, Fuel Type, Plate Number, SNI/ Ketik 'Done' untuk berhenti:")
+		fmt.Scanln(&regNumber, &vehicleType, &regDate, &engineSize, &fuelType, &plateNumber, &sni)
+		if regNumber == "Done"{
+		    return
+		}
+
+		value := calculateVehicleValue(vehicleType)
+		vehicles[vehicleCount] = Vehicle{
+			RegistrationNumber: regNumber,
+			VehicleType:        vehicleType,
+			TaxInfo: VehicleTaxInfo{
+				RegistrationDate: regDate,
+				EngineSize:       engineSize,
+				FuelType:         fuelType,
+				PlateNumber:      plateNumber,
+				Value:            value,
+				SNI:              sni,
+			},
+		}
+		vehicleCount++
+	}
+}
+
+func calculateVehicleValue(vehicleType string) int {
+    if vehicleType == "motor" {
+        return 5000
+    } else if vehicleType == "mobil" {
+		return 100000
+    } else if vehicleType == "truck" {
+		return 150000
+    } else if vehicleType == "bus" {
+		return 200000
+    } else if vehicleType == "pesawat" {
+		return 300000
+    } else {
+		return 0
+	}
+}
+
+// Buat hitung pajak kendaraan
+func calculateVehicleTax() float64 {
+	var totalTax float64 = 0.0
+	for i := 0; i < vehicleCount; i++ {
+		totalTax += float64(vehicles[i].TaxInfo.Value) * 0.15
+	}
+	return totalTax
+}
+
+// Buat nyari pengguna dengan aset tertinggi
+func findUserWithHighestAsset() User {
+	var highestAssetUser User
+	if userCount == 0 {
+		return highestAssetUser
+	}
+
+	highestAssetUser = users[0]
+	for i := 1; i < userCount; i++ {
+		if users[i].Assets > highestAssetUser.Assets {
+			highestAssetUser = users[i]
+		}
+	}
+	return highestAssetUser
+}
+
+// Buat cetak data pajak
+func printTaxData(totalTax float64) {
+	fmt.Printf("Total Pajak: %.2f\n", totalTax)
+}
+
+// Buat cetak data pengguna dengan aset terbanyak
+func printUserData(user User) {
+	writer := tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', tabwriter.Debug)
+	fmt.Fprintln(writer, "Name\tAddress\tNPWP\tTaxType\tAssets\tAssetType\t")
+	fmt.Fprintf(writer, "%s\t%s\t%s\t%s\t%d\t%s\t\n", user.Name, user.Address, user.NPWP, user.TaxType, user.Assets, user.AssetType)
+	writer.Flush()
+}
+
+// Buat cetak semua data pengguna
+func printAllUsers() {
+	writer := tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', tabwriter.Debug)
+	fmt.Fprintln(writer, "Name\tAddress\tNPWP\tTaxType\tAssets\tAssetType\t")
+	for i := 0; i < vehicleCount; i++ {
+		fmt.Fprintf(writer, "%s\t%s\t%s\t%s\t%d\t%s\t\n", users[i].Name, users[i].Address, users[i].NPWP, users[i].TaxType, users[i].Assets, users[i].AssetType)
+	}
+	writer.Flush()
+}
+
+func printAllVehicles() {
+	writer := tabwriter.NewWriter(os.Stdout, 0, 0, 1, ' ', tabwriter.Debug)
+	fmt.Fprintln(writer, "RegistrationNumber\tVehicleType\tRegistrationDate\tEngineSize\tFuelType\tPlateNumber\tValue\tSNI\t")
+	for i := 0; i < vehicleCount; i++ {
+		fmt.Fprintf(writer, "%s\t%s\t%s\t%s\t%s\t%c\t%d\t%d\t\n", vehicles[i].RegistrationNumber, vehicles[i].VehicleType, vehicles[i].TaxInfo.RegistrationDate, vehicles[i].TaxInfo.EngineSize, vehicles[i].TaxInfo.FuelType, vehicles[i].TaxInfo.PlateNumber, vehicles[i].TaxInfo.Value, vehicles[i].TaxInfo.SNI)
+	}
+	writer.Flush()
+}
+
+// Buat edit aset data
+func editAssetData() {
+	var name string
+	fmt.Println("Masukkan nama pengguna yang ingin diedit asetnya:")
+	fmt.Scan(&name)
+
+	for i := 0; i < userCount; i++ {
+		if users[i].Name == name {
+			fmt.Println("Masukkan aset baru:")
+			fmt.Scan(&users[i].Assets)
+			fmt.Println("Aset telah diperbarui.")
+			return
+		}
+	}
+	fmt.Println("Pengguna tidak ditemukan.")
+}
+
+// Buat ngehapus data aset
+func eraseAssetData() {
+	var name string
+	fmt.Println("Masukkan nama pengguna yang ingin dihapus asetnya:")
+	fmt.Scan(&name)
+
+	for i := 0; i < userCount; i++ {
+		if users[i].Name == name {
+			for j := i; j < userCount-1; j++ {
+				users[j] = users[j+1]
+			}
+			userCount--
+			fmt.Println("Data telah dihapus.")
+			return
+		}
+	}
+	fmt.Println("Pengguna tidak ditemukan.")
+}
+
+// Buat mengurutkan data pengguna (Selection sort)
+func sortUsers() {
+    var i, j, minIndex int
+    
+	for i = 0; i < userCount-1; i++ {
+		minIndex = i
+		for j = i + 1; j < userCount; j++ {
+			if compareUsers(users[j], users[minIndex]) {
+				minIndex = j
+			}
+		}
+		if minIndex != i {
+			users[i], users[minIndex] = users[minIndex], users[i]
+		}
+	}
+}
+
+func compareUsers(user1 User, user2 User) bool {
+	if user1.Assets != user2.Assets {
+		return user1.Assets > user2.Assets
+	}
+	return user1.NPWP < user2.NPWP
+}
+
+//Untuk mengurutkan data kendaraan (Insertion sort)
+func sortVehicles() {
+    var i, j int
+    var sementara Vehicle
+	for i = 1; i < vehicleCount; i++ {
+		sementara = vehicles[i]
+		j = i - 1
+		for (j >= 0 && vehicles[j].TaxInfo.RegistrationDate < sementara.TaxInfo.RegistrationDate) || (j >= 0 && vehicles[j].TaxInfo.RegistrationDate == sementara.TaxInfo.RegistrationDate ) {
+			vehicles[j+1] = vehicles[j]
+			j = j - 1
+		}
+		vehicles[j+1] = sementara
+	}
+}
