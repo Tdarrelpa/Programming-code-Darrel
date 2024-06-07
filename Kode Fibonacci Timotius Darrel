@@ -1,0 +1,28 @@
+package main
+
+import "fmt" 
+
+func main() {
+    var n, angkaBerikutnya int
+    t1:=0
+    t2:=1
+    angkaBerikutnya:=0
+    
+    fmt.Print("Masukkan jumlah angka : ")
+    fmt.Scan(&n)
+    fmt.Print("Urutan Fibonacci :")
+    for i:=1;i<=n;i++ {
+        if(i==1){
+            fmt.Print(" ",t1)
+            continue
+        }
+        if(i==2){
+            fmt.Print(" ",t2)
+            continue
+        }
+        urutanBerikutnya = t1 + t2
+        t1=t2
+        t2=angkaBerikutnya
+        fmt.Print(" ",angkaBerikutnya)
+    }
+}

@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+func main(){
+    var belanja int 
+    var disk bool
+    
+    fmt.Print("Total belanja: ")
+    fmt.Scan(&belanja)
+    
+    fmt.Print("Apakah ingin dibuatkan kartu: ")
+    fmt.Scan(&disk)
+    
+    kartu := disk == true
+    fmt.Println("Kartu?", kartu)
+        
+    diskon := belanja >= 100000
+    fmt.Println("Diskon?", diskon)
+    
+    biayakembali := belanja >= 200000 && disk == true
+    fmt.Println("Biaya kembali?", biayakembali)
+}

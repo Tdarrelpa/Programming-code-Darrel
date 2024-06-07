@@ -1,0 +1,22 @@
+package main
+
+import "fmt"
+
+func main() {
+    var x, total int
+    
+    fmt.Print("Masukkan bilangan bulat positif: ")
+    fmt.Scan(&x)
+    
+    if x < 0 {
+        return
+    } 
+    
+    for x > 0 {
+        digit := x % 10
+        total += digit
+        fmt.Print(digit, "")
+        x /= 10
+    }
+    fmt.Println("\n", total)
+	}

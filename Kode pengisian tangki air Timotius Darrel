@@ -1,0 +1,33 @@
+package main
+
+import "fmt" 
+
+func main(){
+        var e, total int
+    
+    fmt.Print("Masukkan kapasitas tangki (total): ")
+    fmt.Scan(&total)
+    
+     fmt.Print("Masukkan jumlah pengisian ember (e): ")
+    fmt.Scan(&e)
+    
+    tangki := 0
+    
+    fmt.Println("Masukkan volume air ember: ")
+    
+    for i := 0; i < e; i++ { 
+        var v int
+        fmt.Println("Masukkan volume air ember (v): ")
+        fmt.Scan(&v)
+        
+        tangki += v
+   
+    if tangki == total {
+        fmt.Println("Tangki penuh")
+    } else if tangki > total {
+        fmt.Println("Tangki melebihi batas")
+    } else {
+        fmt.Println("Tangki belum penuh")
+    }
+  }
+}

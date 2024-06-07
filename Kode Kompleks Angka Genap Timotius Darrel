@@ -1,0 +1,30 @@
+package main
+
+import (
+    "bufio" //buffer input-output
+    "fmt"
+    "os" //sistem operasi yang dibutuhkan untuk menjalankan bufio
+    "regexp" //ekspresi regex
+    "strconv" //konversi string
+)
+
+func main() {
+    reader := bufio.NewReader(os.Stdin) // inisialisasi bufio
+    fmt.Print("Masukkan angka-angka (pisahkan dengan spasi): ")
+    
+    daftar_angka, _ := reader.ReadString('\n') //membaca hingga '\n' (enter) menggunakan metode dari reader ke dalam daftar_angka
+    
+    re := regexp.MustCompile(`\b\d+\b`) //inisialisasi regex untuk menemukan d+ (angka 1 digit atau lebih)
+    
+    numbers := re.FindAllString(daftar_angka, -1) //menemukan semua karakter dalam numbers, maka numbers adalah array
+    
+    sum := 0 //init sum dengan 0
+    
+    for _, number := range numbers{ //iterasi array numbers dengan number
+        num, _ := strconv.Atoi(number) //mengkonversi angka variabel menjadi menjadi int. karena number masih menjadi string
+        if num%2 == 0 { //periksa apakah num adalah genap
+            sum += num //tambahkan dengan sum dengan num bila num bernilai genap
+        }
+}
+    fmt.Printf("Jumlah bilangan genap: %d\n", sum)
+}

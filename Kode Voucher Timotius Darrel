@@ -1,0 +1,25 @@
+package main
+
+import (
+    "fmt" 
+    "strconv"
+)
+
+func main() {
+    var diskon, biayakembali bool = false, false
+    var input string
+    fmt.Print("Masukkan input: ")
+    fmt.Scan(&input)
+    
+    digitTengah, _ := strconv.Atoi(input[1:3])
+    diskon = digitTengah % 2 == 0
+    
+    digitPertama, _ := strconv.Atoi(input[0:1])
+    digitKetiga, _ := strconv.Atoi(input[2:3])
+    digitKeempat, _ := strconv.Atoi(input[3:4])
+    if digitKeempat != 0 {
+        biayakembali = (digitPertama + digitKetiga) % digitKeempat == 0
+    }
+    fmt.Println("Diskon?", diskon)
+    fmt.Println("Biaya kembali?", biayakembali)
+}

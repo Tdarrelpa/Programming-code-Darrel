@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func main() {
+	var s1, s2, s3, s4, s5 float64
+
+	fmt.Print("Masukan 5 catatan suhu: ")
+	fmt.Scan(&s1, &s2, &s3, &s4, &s5)
+
+	if s1 < s2 && s2 < s3 && s3 < s4 && s4 < s5 {
+		fmt.Println("Stabil Naik")
+	} else if s1 > s2 && s2 > s3 && s3 > s4 && s4 > s5 {
+		fmt.Println("Stabil turun")
+	} else {
+		fmt.Println("Tidak Stabil")
+	}
+
+}

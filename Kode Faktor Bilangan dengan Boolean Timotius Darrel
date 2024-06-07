@@ -1,0 +1,16 @@
+package main
+
+import "fmt" 
+
+func main(){
+  var N, i int
+  var s bool
+  
+  fmt.Scan(&N)
+  
+  for i = 1; i <= N; i++{
+      s = N%i == 0
+      fmt.Print(i,s)
+  }
+  
+}

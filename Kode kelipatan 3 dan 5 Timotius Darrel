@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+
+func main() {
+	var angka, a, b int
+
+	fmt.Print("Masukan angka: ")
+	fmt.Scan(&angka)
+
+	a = angka % 5
+	b = angka % 3
+
+	if a == 0 && b == 0 {
+		fmt.Println("Kelipatan 5 dan Kelipatan 3")
+	} else if a == 0 && b != 0 {
+		fmt.Println("Kelipatan 5")
+	} else if a != 0 && b == 0 {
+		fmt.Println("Kelipatan 3")
+	} else if a != 0 && b != 0 {
+		fmt.Println("Bukan Kelipatan 5 dan Bukan Kelipatan 3")
+	}
+
+}

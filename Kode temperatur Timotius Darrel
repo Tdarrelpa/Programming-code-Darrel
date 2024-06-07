@@ -1,0 +1,40 @@
+package main
+
+import "fmt"
+
+func main(){
+	var x, max, min, jumlah, jumlah0, i int
+	var rerata float64
+	
+	jumlah0 = 0
+	jumlah = 0
+	
+	fmt.Scan(&x)
+	max = x
+	min = x
+	i = 0
+	jumlah += x
+	
+	if x == 0 {
+		jumlah0 += 1
+	}
+	
+	for jumlah0 != 2 {
+		fmt.Scan(&x)
+		if x == 0 {
+			jumlah0 += 1
+		} else {
+			jumlah0 = 0
+		}
+		
+		if x > max {
+			max = x
+		} else if x < min {
+			min = x
+		}
+		jumlah += x
+		i += 1
+	}
+	rerata = jumlah/i
+	fmt.Print(max, min, rerata)
+}

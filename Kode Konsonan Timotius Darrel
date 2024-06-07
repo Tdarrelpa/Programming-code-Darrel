@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	var huruf int
+	fmt.Printf("Masukan satu huruf:")
+	fmt.Scanf("%c", &huruf)
+	if 'a' == huruf || huruf == 'i' || 'u' == huruf || huruf == 'e' || huruf == 'o' {
+		fmt.Println("Konsonan")
+	} else {
+		fmt.Println("Bukan Konsonan")
+	}
+}

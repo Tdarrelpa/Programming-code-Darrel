@@ -1,0 +1,20 @@
+package main
+
+import (
+    "fmt" 
+    "strconv"
+)
+
+func main() {
+    var input string
+    var total int
+    
+    fmt.Print("Masukan Bilangan: ")
+    fmt.Scan(&input)
+    
+    for i := 0; i < len(input); i++{
+        x,_ := strconv.Atoi(input[i: i + 1])
+        total += x
+    }
+    fmt.Println("Jumlahnya adalah: ", total)
+}

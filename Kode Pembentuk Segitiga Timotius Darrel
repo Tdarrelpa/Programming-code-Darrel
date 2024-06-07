@@ -1,0 +1,21 @@
+package main
+
+import "fmt"
+
+func main(){
+    var sisi1, sisi2, sisi3 int
+    var Segitiga bool
+    
+    fmt.Print("Masukkan nilai sisi 1: ")
+    fmt.Scan(&sisi1)
+    
+    fmt.Print("Masukkan nilai sisi 2: ")
+    fmt.Scan(&sisi2)
+    
+    fmt.Print("Masukkan nilai sisi 3: ")
+    fmt.Scan(&sisi3)
+    
+    Segitiga = (sisi1 + sisi2 > sisi3) && (sisi1 + sisi3 > sisi2) && (sisi2 + sisi3 > sisi1)
+    
+    fmt.Println("Apakah membentuk segitiga", Segitiga)
+}

@@ -1,0 +1,67 @@
+//Kode yang telah direvisi
+//Input telah diuji coba dan hasil (Output) sudah benar, jadi silahkan dipakai
+
+package main
+
+import "fmt"
+
+func main() {
+	var x, y int
+	fmt.Scan(&x, &y)
+
+	TrigonometriPrimitif(x, y)
+}
+
+func TrigonometriPrimitif(n int, m int) {
+	if (n%2 == 0) != (m%2 == 0) {  
+    /* 
+    Alternatif: 
+    if ((n%2 == 0) || (m%2 == 0)) && !((n%2 == 0) && (m%2 == 0))
+    */
+		if n > m && m >= 1  {
+			if gcd(n, m) == 1 {
+				a := n*n - m*m
+				b := 2 * n * m
+				c := n*n + m*m
+				fmt.Printf("%d %d %d", a, b, c)
+			} else {
+				fmt.Println("Bilangan tidak valid, masukkan nilai lain")
+			}
+		} else {
+			fmt.Println("Bilangan tidak valid, masukkan nilai lain")
+		}
+	} else {
+		fmt.Println("Bilangan tidak valid, masukkan nilai lain")
+	}
+}
+
+// Mencari FPB dengan for-loop dan if-else
+func gcd(x int, y int) int {
+	if x == 0 {
+		return y
+	}
+
+	for y != 0 {
+		if x > y {
+			x -= y
+		} else {
+			y -= x
+		}
+	}
+
+	return x
+}
+
+/*
+Alternatif dengan Rekursif:
+func gcd(x int,y int) int {
+   for x != y {
+      if y < x {
+         return gcd(x - y, y)
+      } else {
+         return gcd(x ,y - x)
+      }
+   }
+   return n
+}
+*/

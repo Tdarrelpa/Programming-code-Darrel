@@ -1,0 +1,19 @@
+package main
+
+import "fmt" 
+
+func main(){
+    var hari int
+    var rata2 float64
+    
+    fmt.Println("Masukkan jumlah hari dan rata2 jam per hari")
+    fmt.Scan(&hari)
+    
+    jam := make([]int, hari)
+    
+    for i := 0; i < hari; i++ {
+    fmt.Scan(&jam[i])
+    rata2 += float64(jam[i])
+    }
+    fmt.Printf("rata2: %.2f", rata2 / float64(hari))
+}

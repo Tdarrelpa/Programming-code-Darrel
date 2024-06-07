@@ -1,0 +1,21 @@
+package main
+
+import "fmt"
+
+func main() {
+	var u1, u2, a, b float64
+
+	fmt.Print("Masukan Keuntungan Bulan ini dan Bulan Sebelumnya: ")
+	fmt.Scan(&u1, &u2)
+
+	a = u2 - u1
+	b = u1 - u2
+
+	if u1 < u2 {
+		fmt.Println("Peningkatan sebesar:", a)
+	} else if u1 > u2 {
+		fmt.Println("Penurunan sebesar:", b)
+	} else if u1 == u2 {
+		fmt.Println("Tetap")
+	}
+}

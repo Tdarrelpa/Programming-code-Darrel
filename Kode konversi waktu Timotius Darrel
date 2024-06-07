@@ -1,0 +1,16 @@
+package main
+
+import "fmt" 
+
+func main(){
+    var t int
+    
+    fmt.Print("Masukkan nilai waktu dalam waktu satuan detik: ")
+    fmt.Scan(&t)
+    
+    jam := t / 3600
+    menit := (t % 3600) / 60
+    detik := t % 60
+    
+    fmt.Printf("Hasil Konversi: %d jam, %d menit, %d detik", jam, menit, detik )
+}
