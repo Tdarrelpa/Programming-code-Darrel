@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+import Master.Buku;
+
+/**
+ *
+ * @author asus
+ */
+public class Bukupelajaran extends Buku {
+    private String Matapelajaran;
+    
+    public Bukupelajaran(){
+        super();Matapelajaran="Tidak ada";
+    }
+    public Bukupelajaran(String nm, String p, int jh, double hb, boolean kb, String mp){
+        super(nm,p,jh,hb,kb);Matapelajaran=mp;
+    }
+
+    /**
+     * @return the Matapelajaran
+     */
+    public String getMatapelajaran() {
+        return Matapelajaran;
+    }
+
+    /**
+     * @param Matapelajaran the Matapelajaran to set
+     */
+    public void setMatapelajaran(String Matapelajaran) {
+        this.Matapelajaran = Matapelajaran;
+    }
+    
+    @Override
+    public void lihatdata(){
+        System.out.printf("%20s %20s %15d %15f %15.12b %20s\n",
+                getNama(),getPengarang(),getJumlahhalaman(),getHargabuku(),isKetersediaanbuku(),Matapelajaran);
+    }
+}

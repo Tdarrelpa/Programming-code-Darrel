@@ -1,0 +1,130 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+/**
+ *
+ * @author asus
+ */
+public class TransaksiBayar {
+    private int no;
+    private String pemakai;
+    private String layanan;
+    private int jumlah;
+    private int kelebihan;
+    private String satuan;
+    private int tambahanBayar;
+    
+    public TransaksiBayar(int no, String pemakai, String layanan, int jumlah, int kelebihan, String satuan, int tambahanBayar) {
+        this.no = no;
+        this.pemakai = pemakai;
+        this.layanan = layanan;
+        this.jumlah = jumlah;
+        this.kelebihan = kelebihan;
+        this.satuan = satuan;
+        this.tambahanBayar = tambahanBayar;
+    }
+
+    /**
+     * @return the no
+     */
+    public int getNo() {
+        return no;
+    }
+
+    /**
+     * @param no the no to set
+     */
+    public void setNo(int no) {
+        this.no = no;
+    }
+
+    /**
+     * @return the pemakai
+     */
+    public String getPemakai() {
+        return pemakai;
+    }
+
+    /**
+     * @param pemakai the pemakai to set
+     */
+    public void setPemakai(String pemakai) {
+        this.pemakai = pemakai;
+    }
+
+    /**
+     * @return the layanan
+     */
+    public String getLayanan() {
+        return layanan;
+    }
+
+    /**
+     * @param layanan the layanan to set
+     */
+    public void setLayanan(String layanan) {
+        this.layanan = layanan;
+    }
+
+    /**
+     * @return the jumlah
+     */
+    public int getJumlah() {
+        return jumlah;
+    }
+
+    /**
+     * @param jumlah the jumlah to set
+     */
+    public void setJumlah(int jumlah) {
+        this.jumlah = jumlah;
+    }
+
+    /**
+     * @return the kelebihan
+     */
+    public int getKelebihan() {
+        return kelebihan;
+    }
+
+    /**
+     * @param kelebihan the kelebihan to set
+     */
+    public void setKelebihan(int kelebihan) {
+        this.kelebihan = kelebihan;
+    }
+
+    /**
+     * @return the satuan
+     */
+    public String getSatuan() {
+        return satuan;
+    }
+
+    /**
+     * @param satuan the satuan to set
+     */
+    public void setSatuan(String satuan) {
+        this.satuan = satuan;
+    }
+
+    /**
+     * @return the tambahanBayar
+     */
+    public int getTambahanBayar() {
+        return tambahanBayar;
+    }
+
+    /**
+     * @param tambahanBayar the tambahanBayar to set
+     */
+    public void setTambahanBayar(int tambahanBayar) {
+        this.tambahanBayar = tambahanBayar;
+    }
+    public void tampilkanTransaksi() {
+        System.out.printf("%-5d %-10s %-10s %-8d %-8d %-10s %-15d\n", no, pemakai, layanan, jumlah, kelebihan, satuan, tambahanBayar);
+    }
+}

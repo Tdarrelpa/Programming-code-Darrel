@@ -1,0 +1,162 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+/**
+ *
+ * @author asus
+ */
+public class GajiPekerja {
+    private int no;
+    private String nama;
+    private String jabatan;
+    private int jumlah;
+    private int ijin;
+    private int pokok;
+    private int tambahan;
+    private int pajak;
+    private int totalGaji;
+    
+    public GajiPekerja(int no, String nama, String jabatan, int jumlah, int ijin, int pokok, int tambahan, int pajak, int totalGaji) {
+        this.no = no;
+        this.nama = nama;
+        this.jabatan = jabatan;
+        this.jumlah = jumlah;
+        this.ijin = ijin;
+        this.pokok = pokok;
+        this.tambahan = tambahan;
+        this.pajak = pajak;
+        this.totalGaji = totalGaji;
+    }
+
+    /**
+     * @return the no
+     */
+    public int getNo() {
+        return no;
+    }
+
+    /**
+     * @param no the no to set
+     */
+    public void setNo(int no) {
+        this.no = no;
+    }
+
+    /**
+     * @return the nama
+     */
+    public String getNama() {
+        return nama;
+    }
+
+    /**
+     * @param nama the nama to set
+     */
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    /**
+     * @return the jabatan
+     */
+    public String getJabatan() {
+        return jabatan;
+    }
+
+    /**
+     * @param jabatan the jabatan to set
+     */
+    public void setJabatan(String jabatan) {
+        this.jabatan = jabatan;
+    }
+
+    /**
+     * @return the jumlah
+     */
+    public int getJumlah() {
+        return jumlah;
+    }
+
+    /**
+     * @param jumlah the jumlah to set
+     */
+    public void setJumlah(int jumlah) {
+        this.jumlah = jumlah;
+    }
+
+    /**
+     * @return the ijin
+     */
+    public int getIjin() {
+        return ijin;
+    }
+
+    /**
+     * @param ijin the ijin to set
+     */
+    public void setIjin(int ijin) {
+        this.ijin = ijin;
+    }
+
+    /**
+     * @return the pokok
+     */
+    public int getPokok() {
+        return pokok;
+    }
+
+    /**
+     * @param pokok the pokok to set
+     */
+    public void setPokok(int pokok) {
+        this.pokok = pokok;
+    }
+
+    /**
+     * @return the tambahan
+     */
+    public int getTambahan() {
+        return tambahan;
+    }
+
+    /**
+     * @param tambahan the tambahan to set
+     */
+    public void setTambahan(int tambahan) {
+        this.tambahan = tambahan;
+    }
+
+/**
+     * @return the pajak
+     */
+    public int getPajak() {
+        return pajak;
+    }
+
+    /**
+     * @param pajak the pajak to set
+     */
+    public void setPajak(int pajak) {
+        this.pajak = pajak;
+    }
+
+    /**
+     * @return the totalGaji
+     */
+    public int getTotalGaji() {
+        return totalGaji;
+    }
+
+    /**
+     * @param totalGaji the totalGaji to set
+     */
+    public void setTotalGaji(int totalGaji) {
+        this.totalGaji = totalGaji;
+    }
+    public void tampilkanGaji() {
+        System.out.printf("%-5d %-10s %-12s %-8d %-8d %-8d %-8d %-8d %-8d\n", no, nama, jabatan, jumlah, ijin, pokok, tambahan, pajak, totalGaji);
+    }
+}

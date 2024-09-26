@@ -1,0 +1,50 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package latkonversi4;
+
+import Sub.GajiPekerja;
+import Sub.Pegawai;
+import Sub.Karyawan;
+import Master.Pekerja;
+
+/**
+ *
+ * @author asus
+ */
+public class LatKonversi4 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Pekerja admin = new Karyawan("Administrasi", "Karyawan", 1500000, 0, 0, 10000, 10000);
+        Pekerja supervisor = new Karyawan("Supervisor", "Karyawan", 3000000, 0, 0, 15000, 20000);
+        Pekerja manager = new Karyawan("Manager", "Karyawan", 5000000, 0, 0, 20000, 30000);
+        Pekerja sablon = new Pegawai("Sablon", "Pegawai", 500000, 25000, 15000, 0, 0);
+        Pekerja celup = new Pegawai("Celup", "Pegawai", 500000, 30000, 15000, 0, 0);
+        Pekerja potong = new Pegawai("Potong", "Pegawai", 400000, 20000, 10000, 0, 0);
+        Pekerja jahit = new Pegawai("Jahit", "Pegawai", 300000, 15000, 10000, 0, 0);
+
+        System.out.printf("%-12s %-10s %-8s %-8s %-8s %-8s %-8s\n", "Jabatan", "Jenis", "Pokok", "Lembur", "Ujam", "Umakan", "UTranspor");
+        admin.lihatData();
+        supervisor.lihatData();
+        manager.lihatData();
+        sablon.lihatData();
+        celup.lihatData();
+        potong.lihatData();
+        jahit.lihatData();
+    }
+    public static void tampilkanGajiPekerja(Pekerja pekerja, int no, String nama, int jumlah, int ijin) {
+        int tambahanUmakanUtranspor = pekerja.hitungTambahanUmakanUtranspor(jumlah > ijin);
+        int tambahanLembur = pekerja.hitungTambahanLembur();
+        int pajak = pekerja.hitungPajak();
+        int totalGaji = pekerja.hitungTotalGaji();
+
+        GajiPekerja gaji = new GajiPekerja(no, nama, pekerja.getJabatan(), jumlah, ijin, pekerja.getPokok(), tambahanLembur + tambahanUmakanUtranspor, pajak, totalGaji);
+
+        System.out.printf("%-5s %-10s %-12s %-8s %-8s %-8s %-8s %-8s %-8s\n", "No.", "Nama", "Jabatan", "Jumlah", "Ijin", "Pokok", "Tambahan", "Pajak", "Total Gaji");
+        gaji.tampilkanGaji();
+    }
+}

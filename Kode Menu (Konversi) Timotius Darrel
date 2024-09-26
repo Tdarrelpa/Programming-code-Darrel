@@ -1,0 +1,70 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Master;
+
+
+
+/**
+ *
+ * @author asus
+ */
+public class Menu {
+    private String menu;
+    private String jenis;
+    private int harga;
+
+    public Menu(){
+        menu="kosong";jenis="tidak ada";harga=0;
+    }
+    public Menu(String m,String j,int h){
+        menu=m;jenis=j;harga=h;
+    }
+    
+    /**
+     * @return the menu
+     */
+    public String getMenu() {
+        return menu;
+    }
+
+    /**
+     * @param menu the menu to set
+     */
+    public void setMenu(String menu) {
+        this.menu = menu;
+    }
+
+    /**
+     * @return the jenis
+     */
+    public String getJenis() {
+        return jenis;
+    }
+
+    /**
+     * @param jenis the jenis to set
+     */
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+
+    /**
+     * @return the harga
+     */
+    public int getHarga() {
+        return harga;
+    }
+
+    /**
+     * @param harga the harga to set
+     */
+    public void setHarga(int harga) {
+        this.harga = harga;
+    }
+    public void lihatdata(){
+        System.out.printf("%20s %10s %7d\n", 
+                getMenu(),getJenis(),getHarga());
+    }
+   }

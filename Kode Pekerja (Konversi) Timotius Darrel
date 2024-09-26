@@ -1,0 +1,160 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Master;
+
+/**
+ *
+ * @author asus
+ */
+public class Pekerja {
+    private String jabatan;
+    private String jenis;
+    private int pokok;
+    private int lembur;
+    private int ujam;
+    private int umakan;
+    private int utranspor;
+    
+    public Pekerja(String jabatan, String jenis, int pokok, int lembur, int ujam, int umakan, int utranspor) {
+        this.jabatan = jabatan;
+        this.jenis = jenis;
+        this.pokok = pokok;
+        this.lembur = lembur;
+        this.ujam = ujam;
+        this.umakan = umakan;
+        this.utranspor = utranspor;
+    }
+
+    /**
+     * @return the jabatan
+     */
+    public String getJabatan() {
+        return jabatan;
+    }
+
+    /**
+     * @param jabatan the jabatan to set
+     */
+    public void setJabatan(String jabatan) {
+        this.jabatan = jabatan;
+    }
+
+    /**
+     * @return the jenis
+     */
+    public String getJenis() {
+        return jenis;
+    }
+
+    /**
+     * @param jenis the jenis to set
+     */
+    public void setJenis(String jenis) {
+        this.jenis = jenis;
+    }
+
+    /**
+     * @return the pokok
+     */
+    public int getPokok() {
+        return pokok;
+    }
+
+    /**
+     * @param pokok the pokok to set
+     */
+    public void setPokok(int pokok) {
+        this.pokok = pokok;
+    }
+
+    /**
+     * @return the lembur
+     */
+    public int getLembur() {
+        return lembur;
+    }
+
+    /**
+     * @param lembur the lembur to set
+     */
+    public void setLembur(int lembur) {
+        this.lembur = lembur;
+    }
+
+    /**
+     * @return the ujam
+     */
+    public int getUjam() {
+        return ujam;
+    }
+
+    /**
+     * @param ujam the ujam to set
+     */
+    public void setUjam(int ujam) {
+        this.ujam = ujam;
+    }
+
+    /**
+     * @return the umakan
+     */
+    public int getUmakan() {
+        return umakan;
+    }
+
+    /**
+     * @param umakan the umakan to set
+     */
+    public void setUmakan(int umakan) {
+        this.umakan = umakan;
+    }
+
+    /**
+     * @return the utranspor
+     */
+    public int getUtranspor() {
+        return utranspor;
+    }
+
+    /**
+     * @param utranspor the utranspor to set
+     */
+    public void setUtranspor(int utranspor) {
+        this.utranspor = utranspor;
+    }
+     public int hitungTambahanUmakanUtranspor(boolean masukKerja) {
+        if (masukKerja) {
+            return getUmakan() + getUtranspor();
+        } else {
+            return 0;
+        }
+    }
+     public int hitungTambahanLembur() {
+        int jamKerja = getUjam() + getLembur();
+        int jamNormal = 8; 
+        if (jamKerja > jamNormal) {
+            return (jamKerja - jamNormal) * getPokok() / jamNormal;
+        } else {
+            return 0;
+        }
+    }
+     public int hitungPajak() {
+        int totalPendapatan = getPokok() + hitungTambahanLembur() + hitungTambahanUmakanUtranspor(true);
+        if (totalPendapatan > 2000000) {
+            double pajakPersen = 0.10; 
+            return (int) (pajakPersen * (totalPendapatan - 2000000));
+        } else {
+            return 0;
+        }
+    }
+     public int hitungTotalGaji() {
+        int totalGaji = getPokok() + hitungTambahanLembur() + hitungTambahanUmakanUtranspor(true) - hitungPajak();
+        return totalGaji;
+    }
+    
+    public void lihatData() {
+        System.out.printf("%-12s %-10s %-8d %-8d %-8d %-8d %-8d\n", jabatan, jenis, pokok, lembur, ujam, umakan, utranspor);
+    }
+}

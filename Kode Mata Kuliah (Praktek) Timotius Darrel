@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+import Master.Matakuliah;
+
+/**
+ *
+ * @author asus
+ */
+public class Matakuliahpraktek extends Matakuliah {
+    private int JumlahLaboratorium;
+    
+    public Matakuliahpraktek(){
+        super();JumlahLaboratorium=0;
+    }
+    public Matakuliahpraktek(String nm, String dp, int js, double jm, char kt, int jl){
+        super(nm,dp,js,jm,kt);JumlahLaboratorium=jl;
+    }
+
+    /**
+     * @return the JumlahLaboratorium
+     */
+    public int getJumlahLaboratorium() {
+        return JumlahLaboratorium;
+    }
+
+    /**
+     * @param JumlahLaboratorium the JumlahLaboratorium to set
+     */
+    public void setJumlahLaboratorium(int JumlahLaboratorium) {
+        this.JumlahLaboratorium = JumlahLaboratorium;
+    }
+    
+    @Override
+    public void lihatdata(){
+        System.out.printf("%25s %20s %15d %15f %15c %28d\n", 
+                getNamamatkul(),getDosenpengajar(),getJumlahsks(),getJammasuk(),getKodematkul(),JumlahLaboratorium);
+    }
+}

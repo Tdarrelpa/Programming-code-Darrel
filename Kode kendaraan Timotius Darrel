@@ -1,0 +1,109 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Master;
+
+/**
+ *
+ * @author asus
+ */
+public class Kendaraan {
+   private String merk;
+    private String jumlahroda;
+    private String tahunpembuatan;
+    private int kecepatan;
+   private double bahanbakar;
+   private static int maxspeed=-1;
+   
+   public Kendaraan(){
+    merk="tidak ada";jumlahroda="tidak ada";tahunpembuatan="tidak ada";kecepatan=0;bahanbakar=0.00;if(kecepatan>maxspeed) maxspeed=kecepatan;
+   }
+   public Kendaraan(String m, String jr, String tp, int kc, double bb){
+    merk=m;jumlahroda=jr;tahunpembuatan=tp;kecepatan=kc;bahanbakar=bb;if(kecepatan>maxspeed) maxspeed=kecepatan;
+   }
+   
+    /**
+     * @return the merk
+     */
+    public String getMerk() { 
+        return merk;
+    }
+
+    /**
+     * @param merk the merk to set
+     */
+    public void setMerk(String merk) {
+        this.merk = merk;
+    }
+
+    /**
+     * @return the jumlahroda
+     */
+    public String getJumlahroda() {
+        return jumlahroda;
+    }
+
+    /**
+     * @param jumlahroda the jumlahroda to set
+     */
+    public void setJumlahroda(String jumlahroda) {
+        this.jumlahroda = jumlahroda;
+    }
+
+    /**
+     * @return the tahunpembuatan
+     */
+    public String getTahunpembuatan() {
+        return tahunpembuatan;
+    }
+
+    /**
+     * @param tahunpembuatan the tahunpembuatan to set
+     */
+    public void setTahunpembuatan(String tahunpembuatan) {
+        this.tahunpembuatan = tahunpembuatan;
+    }
+
+    /**
+     * @return the kecepatan
+     */
+    public int getKecepatan() {
+        return kecepatan;
+    }
+
+    /**
+     * @param kecepatan the kecepatan to set
+     */
+    public void setKecepatan(int kecepatan) {
+        this.kecepatan = kecepatan;
+        if(kecepatan>maxspeed) maxspeed=kecepatan;
+    }
+
+    /**
+     * @return the bahanbakar
+     */
+    public double getBahanbakar() {
+        return bahanbakar;
+    }
+
+    /**
+     * @param bahanbakar the bahanbakar to set
+     */
+    public void setBahanbakar(double bahanbakar) {
+        this.bahanbakar = bahanbakar; 
+    }
+    
+    public int getMaxspeed(){
+        return maxspeed;
+    }
+    
+    public void setMaxspeed(int maxspeed){
+        Kendaraan.maxspeed=maxspeed;
+    }
+    
+    public void lihatdata(){
+    System.out.printf("%20s %20s %20s %20d %15.10f\n", merk,jumlahroda,tahunpembuatan,kecepatan, bahanbakar);
+    }
+
+}

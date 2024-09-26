@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package latkonversi1;
+
+import Sub.Minuman;
+import Sub.Makanan;
+
+/**
+ *
+ * @author asus
+ */
+public class LatKonversi1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+     Makanan m1=new Makanan ("Nasi Goreng","Makanan",10000,10); 
+     Makanan m2=new Makanan ("Cap Cay","Makanan",12000,10);
+     Makanan m3=new Makanan ("Indomie","Makanan",5000,20);
+     Minuman m4=new Minuman ("Jus Jeruk","Minuman",4000,1000);
+     Minuman m5=new Minuman ("Coca Cola","Minuman",3500,1000);
+     Minuman m6=new Minuman ("Capucino","Minuman",3000,500);
+     
+     System.out.printf("%20s %10s %7s %5s %5s\n", 
+                "Menu","Jenis","Harga","Batas","Es");
+     
+   
+     m1.lihatdata();
+     m2.lihatdata();
+     m3.lihatdata();
+     m4.lihatdata();
+     m5.lihatdata();
+     m6.lihatdata();
+    }
+    
+}

@@ -1,0 +1,81 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package kelas2;
+
+/**
+ *
+ * @author asus
+ */
+public class Mobil {
+    private String namaMobil;
+    private int tarif;
+    private int Tahunkeluaran;
+    
+    public Mobil() {
+        namaMobil = "Kosong";tarif = 0;Tahunkeluaran = 0;
+    }
+
+    public Mobil(String nm) {
+        namaMobil = nm;tarif = 0;Tahunkeluaran = 0;
+    }
+
+    public Mobil(String nm, int t) {
+        namaMobil = nm;tarif = t;Tahunkeluaran = 0;
+    }
+
+    public Mobil(String nm, int t, int Tk) {
+        namaMobil = nm;tarif = t;Tahunkeluaran = Tk;
+    }
+
+    /**
+     * @return the namaMobil
+     */
+    public String getNamaMobil() {
+        return namaMobil;
+    }
+
+    /**
+     * @param namaMobil the namaMobil to set
+     */
+    public void setNamaMobil(String namaMobil) {
+        this.namaMobil = namaMobil;
+    }
+
+    /**
+     * @return the tarif
+     */
+    public int getTarif() {
+        return tarif;
+    }
+
+    /**
+     * @param tarif the tarif to set
+     */
+    public void setTarif(int tarif) {
+        this.tarif = tarif;
+    }
+
+    /**
+     * @return the Tahunkeluaran
+     */
+    public int getTahunkeluaran() {
+        return Tahunkeluaran;
+    }
+
+    /**
+     * @param Tahunkeluaran the Tahunkeluaran to set
+     */
+    public void setTahunkeluaran(int Tahunkeluaran) {
+        this.Tahunkeluaran = Tahunkeluaran;
+    }
+   
+    public void lihatdata() {
+        int umurMobil = 2023-Tahunkeluaran;
+        System.out.println("Mobil : " +namaMobil);
+        System.out.println("Tarif : Rp " +tarif);
+        System.out.println("Keluaran : " +Tahunkeluaran);
+        System.out.println("Umur Mobil : " + umurMobil+" tahun");
+   }
+}

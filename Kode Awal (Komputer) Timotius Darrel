@@ -1,0 +1,83 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package awal5;
+
+import Sub.Komputerlaptop;
+import Sub.Komputerdesktop;
+import Master.Komputer;
+
+/**
+ *
+ * @author asus
+ */
+public class Awal5 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Komputer k1=new Komputer("Asus","Intel","As56370",8,3.2,'A',true);
+        k1.setMerk("Asus");
+        k1.setProcessor("Intel");
+        k1.setModel("As56370");
+        k1.setJumlahRAM(8);
+        k1.setKecepatanProcessor(3.2);
+        k1.setKodeproduk('A');
+        k1.setKondisi(true);
+       
+        Komputer k2=new Komputer("Dell","AMD","De70757",12,4.0,'D',false);
+        k2.setMerk("Dell");
+        k2.setProcessor("AMD");
+        k2.setModel("De70757");
+        k2.setJumlahRAM(12);
+        k2.setKecepatanProcessor(4.0);
+        k2.setKodeproduk('D');
+        k2.setKondisi(false);
+       
+        Komputer k3=new Komputer("Acer","Intel","Ac80935",6,3.0,'C',true);
+        k3.setMerk("Acer");
+        k3.setProcessor("Intel");
+        k3.setModel("Ac80935");
+        k3.setJumlahRAM(6);
+        k3.setKecepatanProcessor(3.0);
+        k3.setKodeproduk('C');
+        k3.setKondisi(true);
+       
+        Komputer k4=new Komputer("Apple","Mac OS","Ap20135",16,4.0,'H',true);
+        k4.setMerk("Apple");
+        k4.setProcessor("Mac OS");
+        k4.setModel("Ap20135");
+        k4.setJumlahRAM(16);
+        k4.setKecepatanProcessor(4.0);
+        k4.setKodeproduk('H');
+        k4.setKondisi(true);
+        
+        Komputer k5=new Komputer("Polytron","Intel","P23056",4,2.8,'U',false);
+        k5.setMerk("Polytron");
+        k5.setProcessor("Intel");
+        k5.setModel("P23056");
+        k5.setJumlahRAM(4);
+        k5.setKecepatanProcessor(2.8);
+        k5.setKodeproduk('U');
+        k5.setKondisi(false);
+        
+        System.out.printf("%15s %15s %15s %17s %17s %17s %12.9s\n", 
+                "merk","processor","model","jumlahRAM","kecepatanProcessor","kodeproduk","kondisi");
+        
+        k1.lihatdata();
+        k2.lihatdata();
+        k3.lihatdata();
+        k4.lihatdata();
+        k5.lihatdata();
+        
+        Komputer k6=new Komputerdesktop("Vivo","Intel","V12345",16,3.6,'V',false,20,1);
+        Komputer k7=new Komputerlaptop("Asus","AMD","As23456",12,3.2,'B',true,"Lithium ion",true);
+        k6.lihatdata();
+        k7.lihatdata();
+        
+        System.out.println("Jumlah RAM Terkecil: " + Komputer.getJumlahRAMterkecil() + " GB");
+    }
+    
+}

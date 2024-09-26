@@ -1,0 +1,29 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package kelas1;
+
+/**
+ *
+ * @author asus
+ */
+public class Kelas1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        System.out.println("Barang        Harga          Stok           Sub");
+        Barang barang1 = new Barang();
+        Barang barang2 = new Barang("Pensil");
+        Barang barang3 = new Barang("Buku", 2000);
+        Barang barang4 = new Barang("Pensil Warna", 500, 10);
+
+        barang1.lihatdata();
+        barang2.lihatdata();
+        barang3.lihatdata();
+        barang4.lihatdata();
+    }
+    
+}

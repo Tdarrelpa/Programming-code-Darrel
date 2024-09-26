@@ -1,0 +1,39 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Sub;
+
+import Master.Kendaraan;
+
+public class KendaraanR2 extends Kendaraan {
+    private String Rodatiga;
+    
+    public KendaraanR2(){
+        super();Rodatiga="tidak tahu";
+    }
+    public KendaraanR2(String m, String jr, String tp, int kc, double bb, String rt){
+        super(m,jr,tp,kc,bb);Rodatiga=rt;
+    }
+        
+
+    /**
+     * @return the Rodatiga
+     */
+    public String getRodatiga() {
+        return Rodatiga;
+    }
+
+    /**
+     * @param Rodatiga the Rodatiga to set
+     */
+    public void setRodatiga(String Rodatiga) {
+        this.Rodatiga = Rodatiga;
+    }
+    
+    @Override
+    public void lihatdata(){
+        System.out.printf("%20s %20s %20s %20d %15.10f %15s\n",
+                getMerk(),getJumlahroda(),getTahunpembuatan(),getKecepatan(),getBahanbakar(),Rodatiga);
+    }
+}

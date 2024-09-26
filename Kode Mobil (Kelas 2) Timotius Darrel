@@ -1,0 +1,31 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package kelas2;
+
+/**
+ *
+ * @author asus
+ */
+public class Kelas2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Mobil mobil1= new Mobil();
+        Mobil mobil2= new Mobil("Toyota Avanza");
+        Mobil mobil3= new Mobil("Honda Jazz", 200000, 2018);
+        Mobil mobil4= new Mobil("Suzuki Ertiga", 250000, 2019);
+
+        mobil1.lihatdata();
+        System.out.println();
+        mobil2.lihatdata();
+        System.out.println();
+        mobil3.lihatdata();
+        System.out.println();
+        mobil4.lihatdata();
+    }
+   
+}

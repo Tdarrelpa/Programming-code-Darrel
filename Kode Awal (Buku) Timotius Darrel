@@ -1,0 +1,43 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package awal4;
+
+import Sub.Bukupelajaran;
+import Sub.Bukukomik;
+import Master.Buku;
+
+/**
+ *
+ * @author asus
+ */
+public class Awal4 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Buku b1=new Buku("Cinderella", "Robert Hancook", 20, 20.000, false );
+        Buku b2=new Buku("Cara Memasak", "Sri Astuti", 23, 15.000,true);
+        Buku b3=new Buku("Matematika", "Handoyo", 45, 30.000,true);
+        Buku b4=new Buku("Dongeng Legenda", "Cahyo", 70, 45.000,false);
+        Buku b5=new Buku("Naruto", "Suzuki", 120, 75.000,true);
+        System.out.printf("%20s %20s %15s %15s %15.12s\n","nama","pengarang","jumlahhalaman","hargabuku","ketersediaanbuku");
+        
+        b1.lihatdata();
+        b2.lihatdata();
+        b3.lihatdata();
+        b4.lihatdata();
+        b5.lihatdata();
+        
+        Buku b6=new Bukupelajaran("Mari Menggambar", "Karyadi", 25, 15.000,false, "Seni Rupa");
+        Buku b7=new Bukukomik("One Piece", "Haneda", 175, 100.000,true, "Action");
+        b6.lihatdata();
+        b7.lihatdata();
+        
+        System.out.println("Jumlah Buku : " + Buku.getJumlahbuku());
+        System.out.println("Rata-rata Harga Buku : " + Buku.getRataratahargabuku());
+    }
+    
+}
