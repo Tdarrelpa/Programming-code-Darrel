@@ -1,1 +1,1 @@
-Kompilasi dari kodr Pengenalan Pemrograman dan Algoritma Pemrograman
+Kompilasi dari kode Pengenalan Pemrograman dan Algoritma Pemrograman
